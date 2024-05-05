@@ -1,0 +1,8 @@
+.eslintrc.js
+.prettierrc.js
+jest.config.js
+.vscode
+node_modules
+dist
+scripts/translations-ditto
+cleanupExamples/cleanup.ts

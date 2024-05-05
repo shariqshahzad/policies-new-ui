@@ -1,0 +1,36 @@
+/** @type {import('@jest/types').Config.InitialOptions} */
+module.exports = {
+  preset: 'ts-jest/presets/js-with-ts',
+  moduleNameMapper: {
+    '^src/(.*)$': '<rootDir>/src/$1',
+    '^.+\\.(css|less)$': '<rootDir>/config/jest/CSSStub.js',
+    '.+\\.svg$': '<rootDir>/config/jest/fileTransform.js',
+    '.+\\.(css|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+  },
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{tsx,ts}',
+    '!src/bootstrap.tsx',
+    '!src/index.ts',
+    '!src/tests/**/*',
+    '!src/App.tsx',
+    '!src/**/*.d.ts',
+    '!src/**/*.styles.ts',
+    '!src/mocks/**/*',
+    '!src/**/*.enum.ts',
+    '!src/app/routing/contexts/*',
+  ],
+  modulePathIgnorePatterns: ['integration'],
+  coverageReporters: ['lcov', 'html', 'json', 'text-summary'],
+  setupFilesAfterEnv: ['<rootDir>/src/tests/setup.ts', '<rootDir>/src/tests/remoteEntriesMocks.tsx'],
+  testMatch: ['<rootDir>/src/**/*.spec.{js,jsx,ts,tsx}'],
+  testEnvironment: '<rootDir>/src/tests/custom-js-dom.ts',
+  transform: {
+    '^.+\\.(ts|js|tsx|jsx)$': '@swc/jest',
+    '.+\\.(css|png|jpg|ttf|woff|woff2|svg)$': 'jest-transform-stub',
+  },
+  transformIgnorePatterns: ['/node_modules/(?!@takamol/(qiwa-design-system))/.*'],
+  moduleDirectories: ['node_modules', 'src'],
+  moduleFileExtensions: ['js', 'ts', 'jsx', 'tsx'],
+  resetMocks: true,
+};

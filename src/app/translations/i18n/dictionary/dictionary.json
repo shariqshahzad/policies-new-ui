@@ -1,0 +1,254 @@
+{
+  "PAGE_TITLE": {
+    "text": "Qiwa - Dashboard Template",
+    "api_id": "PAGE_TITLE",
+    "component_api_id": "PAGE_TITLE",
+    "variants": { "ar": { "text": "Qiwa - نموذج لوحة القيادة" } }
+  },
+  "EXAMPLE_DASHBOARD.TOP_SECTION.WELCOME": {
+    "text": "Welcome to",
+    "api_id": "EXAMPLE_DASHBOARD.TOP_SECTION.WELCOME",
+    "component_api_id": "EXAMPLE_DASHBOARD.TOP_SECTION.WELCOME",
+    "variants": { "ar": { "text": "الخدمات" } }
+  },
+  "EXAMPLE_DASHBOARD.TO_DO.TAB": {
+    "text": "To do",
+    "api_id": "EXAMPLE_DASHBOARD.TO_DO.TAB",
+    "component_api_id": "EXAMPLE_DASHBOARD.TO_DO.TAB",
+    "variants": { "ar": { "text": "الخدمات" } }
+  },
+  "EXAMPLE_DASHBOARD.RECOMMENDATIONS.TAB": {
+    "text": "Recommendations",
+    "api_id": "EXAMPLE_DASHBOARD.RECOMMENDATIONS.TAB",
+    "component_api_id": "EXAMPLE_DASHBOARD.RECOMMENDATIONS.TAB",
+    "variants": { "ar": { "text": "المنشأة" } }
+  },
+  "EXAMPLE_DASHBOARD.NO_CONTENT": {
+    "text": " No content",
+    "api_id": "EXAMPLE_DASHBOARD.NO_CONTENT",
+    "component_api_id": "EXAMPLE_DASHBOARD.NO_CONTENT",
+    "variants": { "ar": { "text": " المهام" } }
+  },
+  "EXAMPLE_DASHBOARD.YOUR_COMPANY.TITLE": {
+    "text": "Your company",
+    "api_id": "EXAMPLE_DASHBOARD.YOUR_COMPANY.TITLE",
+    "component_api_id": "EXAMPLE_DASHBOARD.YOUR_COMPANY.TITLE",
+    "variants": { "ar": { "text": "شركتك" } }
+  },
+  "EXAMPLE_DASHBOARD.YOUR_COMPANY.MANAGE_COMPANY": {
+    "text": "Manage your company",
+    "api_id": "EXAMPLE_DASHBOARD.YOUR_COMPANY.MANAGE_COMPANY",
+    "component_api_id": "EXAMPLE_DASHBOARD.YOUR_COMPANY.MANAGE_COMPANY",
+    "variants": { "ar": { "text": "إدارة شركتك" } }
+  },
+  "EXAMPLE_DASHBOARD.COMPLIANCE_WITH_MINISTRY": {
+    "text": "Your compliance with Ministry laws is ",
+    "api_id": "EXAMPLE_DASHBOARD.COMPLIANCE_WITH_MINISTRY",
+    "component_api_id": "EXAMPLE_DASHBOARD.COMPLIANCE_WITH_MINISTRY",
+    "variants": { "ar": { "text": "امتثالك لقوانين الوزارة هو " } }
+  },
+  "EXAMPLE_DASHBOARD.COMPANY_ADHERE": {
+    "text": "Your company adheres to government compliance scores well.",
+    "api_id": "EXAMPLE_DASHBOARD.COMPANY_ADHERE",
+    "component_api_id": "EXAMPLE_DASHBOARD.COMPANY_ADHERE",
+    "variants": { "ar": { "text": "تلتزم شركتك بنتائج الامتثال الحكومية جيدًا." } }
+  },
+  "EXAMPLE_DASHBOARD.VIEW_COMPLIANCE_SCORES": {
+    "text": "View your compliance scores",
+    "api_id": "EXAMPLE_DASHBOARD.VIEW_COMPLIANCE_SCORES",
+    "component_api_id": "EXAMPLE_DASHBOARD.VIEW_COMPLIANCE_SCORES",
+    "variants": { "ar": { "text": "عرض درجات الامتثال الخاصة بك" } }
+  },
+  "EXAMPLE_DASHBOARD.WHAT_IS_COMPLIANCE_SCORE": {
+    "text": "What is compliance score?",
+    "api_id": "EXAMPLE_DASHBOARD.WHAT_IS_COMPLIANCE_SCORE",
+    "component_api_id": "EXAMPLE_DASHBOARD.WHAT_IS_COMPLIANCE_SCORE",
+    "variants": { "ar": { "text": "ما هي درجة الامتثال؟" } }
+  },
+  "EXAMPLE_DASHBOARD.ECONOMIC_ACTIVITY.TITLE": {
+    "text": "Economic activity of your company",
+    "api_id": "EXAMPLE_DASHBOARD.ECONOMIC_ACTIVITY.TITLE",
+    "component_api_id": "EXAMPLE_DASHBOARD.ECONOMIC_ACTIVITY.TITLE",
+    "variants": { "ar": { "text": "النشاط الاقتصادي لشركتك" } }
+  },
+  "EXAMPLE_DASHBOARD.MANAGE_ENTITY": {
+    "text": "Manage entity",
+    "api_id": "EXAMPLE_DASHBOARD.MANAGE_ENTITY",
+    "component_api_id": "EXAMPLE_DASHBOARD.MANAGE_ENTITY",
+    "variants": { "ar": { "text": "إدارة الكيان" } }
+  },
+  "EXAMPLE_DASHBOARD.COMPANIES_FROM_UID": {
+    "text": "companies from UID:",
+    "api_id": "EXAMPLE_DASHBOARD.COMPANIES_FROM_UID",
+    "component_api_id": "EXAMPLE_DASHBOARD.COMPANIES_FROM_UID",
+    "variants": { "ar": { "text": "شركات من UID:" } }
+  },
+  "EXAMPLE_DASHBOARD.PART_OF_ECONOMIC_ACTIVITY": {
+    "text": "are part of this economic activity.",
+    "api_id": "EXAMPLE_DASHBOARD.PART_OF_ECONOMIC_ACTIVITY",
+    "component_api_id": "EXAMPLE_DASHBOARD.PART_OF_ECONOMIC_ACTIVITY",
+    "variants": { "ar": { "text": "جزء من هذا النشاط الاقتصادي." } }
+  },
+  "EXAMPLE_DASHBOARD.WHAT_IS_ECONOMIC_ACTIVITY": {
+    "text": "What is an economic activity?",
+    "api_id": "EXAMPLE_DASHBOARD.WHAT_IS_ECONOMIC_ACTIVITY",
+    "component_api_id": "EXAMPLE_DASHBOARD.WHAT_IS_ECONOMIC_ACTIVITY",
+    "variants": { "ar": { "text": "ما هو النشاط الاقتصادي؟" } }
+  },
+  "EXAMPLE_DASHBOARD.NITAQAT_LEVEL": {
+    "text": "Nitaqat level",
+    "api_id": "EXAMPLE_DASHBOARD.NITAQAT_LEVEL",
+    "component_api_id": "EXAMPLE_DASHBOARD.NITAQAT_LEVEL",
+    "variants": { "ar": { "text": "مستوى نطاقات" } }
+  },
+  "EXAMPLE_DASHBOARD.NUMBER_OF_SAUDIS_TO_HIRE": {
+    "text": "Number of Saudis you need to hire to reach the next level:",
+    "api_id": "EXAMPLE_DASHBOARD.NUMBER_OF_SAUDIS_TO_HIRE",
+    "component_api_id": "EXAMPLE_DASHBOARD.NUMBER_OF_SAUDIS_TO_HIRE",
+    "variants": { "ar": { "text": "عدد السعوديين الذين تحتاج إلى توظيفهم للوصول إلى المستوى التالي:" } }
+  },
+  "EXAMPLE_DASHBOARD.SUADIZATION_LEVEL": {
+    "text": "Your level of Saudization is",
+    "api_id": "EXAMPLE_DASHBOARD.SUADIZATION_LEVEL",
+    "component_api_id": "EXAMPLE_DASHBOARD.SUADIZATION_LEVEL",
+    "variants": { "ar": { "text": "مستوى السعودة الخاص بك هو" } }
+  },
+  "EXAMPLE_DASHBOARD.SAUDIZATION_IMPROVE": {
+    "text": "Try to improve it to be able to hire new expat employees.",
+    "api_id": "EXAMPLE_DASHBOARD.SAUDIZATION_IMPROVE",
+    "component_api_id": "EXAMPLE_DASHBOARD.SAUDIZATION_IMPROVE",
+    "variants": { "ar": { "text": "حاول تحسينه لتتمكن من توظيف موظفين وافدين جدد." } }
+  },
+  "EXAMPLE_DASHBOARD.NITAQAT_IMPROVE": {
+    "text": "How to improve your Nitaqat level?",
+    "api_id": "EXAMPLE_DASHBOARD.NITAQAT_IMPROVE",
+    "component_api_id": "EXAMPLE_DASHBOARD.NITAQAT_IMPROVE",
+    "variants": { "ar": { "text": "كيف تحسن مستواك في نطاقات؟" } }
+  },
+  "EXAMPLE_DASHBOARD.EMPLOYEES": {
+    "text": "Employees",
+    "api_id": "EXAMPLE_DASHBOARD.EMPLOYEES",
+    "component_api_id": "EXAMPLE_DASHBOARD.EMPLOYEES",
+    "variants": { "ar": { "text": "المنشأة" } }
+  },
+  "EXAMPLE_DASHBOARD.MANAGE_EMPLOYEES": {
+    "text": "Manage employees",
+    "api_id": "EXAMPLE_DASHBOARD.MANAGE_EMPLOYEES",
+    "component_api_id": "EXAMPLE_DASHBOARD.MANAGE_EMPLOYEES",
+    "variants": { "ar": { "text": "ك بنتائج الامتث" } }
+  },
+  "EXAMPLE_DASHBOARD.NUMBER.EMPLOYEES": {
+    "text": "Number of employees:",
+    "api_id": "EXAMPLE_DASHBOARD.NUMBER.EMPLOYEES",
+    "component_api_id": "EXAMPLE_DASHBOARD.NUMBER.EMPLOYEES",
+    "variants": { "ar": { "text": "الك لقوانين" } }
+  },
+  "EXAMPLE_DASHBOARD.EMPLOYEES.SAUDIS": {
+    "text": "Saudis",
+    "api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.SAUDIS",
+    "component_api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.SAUDIS",
+    "variants": { "ar": { "text": "المهام" } }
+  },
+  "EXAMPLE_DASHBOARD.EMPLOYEES.NON_SAUDIS": {
+    "text": "non-Saudis",
+    "api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.NON_SAUDIS",
+    "component_api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.NON_SAUDIS",
+    "variants": { "ar": { "text": "شركتك" } }
+  },
+  "EXAMPLE_DASHBOARD.EMPLOYEES.RATE": {
+    "text": "Saudization rate:",
+    "api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.RATE",
+    "component_api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.RATE",
+    "variants": { "ar": { "text": "دارة شركتك" } }
+  },
+  "EXAMPLE_DASHBOARD.EMPLOYEES.RATE.DESCRIPTION": {
+    "text": "Saudization rates for companies that are part of an entity are the basis of the overall Nitaqat score.",
+    "api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.RATE.DESCRIPTION",
+    "component_api_id": "EXAMPLE_DASHBOARD.EMPLOYEES.RATE.DESCRIPTION",
+    "variants": { "ar": { "text": "لتزم شركتك بنتائج الامتثال الحكومية جيدًا." } }
+  },
+  "EXAMPLE_DASHBOARD.NUMBER_OF_NON_SAUDIS_TO_HIRE": {
+    "text": "Number of non-Saudi employees you can hire",
+    "api_id": "EXAMPLE_DASHBOARD.NUMBER_OF_NON_SAUDIS_TO_HIRE",
+    "component_api_id": "EXAMPLE_DASHBOARD.NUMBER_OF_NON_SAUDIS_TO_HIRE",
+    "variants": { "ar": { "text": "عدد الموظفين غير السعوديين الذين يمكنك توظيفهم" } }
+  },
+  "EXAMPLE_DASHBOARD.FOR": {
+    "text": "for",
+    "api_id": "EXAMPLE_DASHBOARD.FOR",
+    "component_api_id": "EXAMPLE_DASHBOARD.FOR",
+    "variants": { "ar": { "text": "ل" } }
+  },
+  "EXAMPLE_DASHBOARD.HOW_TO_HIRE": {
+    "text": "How to hire non-Saudi employees?",
+    "api_id": "EXAMPLE_DASHBOARD.HOW_TO_HIRE",
+    "component_api_id": "EXAMPLE_DASHBOARD.HOW_TO_HIRE",
+    "variants": { "ar": { "text": "كيف يتم توظيف موظفين غير سعوديين؟" } }
+  },
+  "EXAMPLE_DASHBOARD.ISSUE_VISA": {
+    "text": "Issue Visa",
+    "api_id": "EXAMPLE_DASHBOARD.ISSUE_VISA",
+    "component_api_id": "EXAMPLE_DASHBOARD.ISSUE_VISA",
+    "variants": { "ar": { "text": "إصدار تأشيرة" } }
+  },
+  "EXAMPLE_DASHBOARD.TRANSFER_EMPLOYEE": {
+    "text": "Transfer an employee",
+    "api_id": "EXAMPLE_DASHBOARD.TRANSFER_EMPLOYEE",
+    "component_api_id": "EXAMPLE_DASHBOARD.TRANSFER_EMPLOYEE",
+    "variants": { "ar": { "text": "نقل موظف" } }
+  },
+  "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES": {
+    "text": "Long-term employees",
+    "api_id": "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES",
+    "component_api_id": "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES",
+    "variants": { "ar": { "text": "الموظفون على المدى الطويل" } }
+  },
+  "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES.DESECRIPTION": {
+    "text": "Applies for Work Visas and transferring employees from another KSA company.",
+    "api_id": "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES.DESECRIPTION",
+    "component_api_id": "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES.DESECRIPTION",
+    "variants": { "ar": { "text": "التقدم بطلب للحصول على تأشيرات العمل ونقل الموظفين من شركة سعودية أخرى." } }
+  },
+  "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES.INFO": {
+    "text": "What is Allowed quota?",
+    "api_id": "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES.INFO",
+    "component_api_id": "EXAMPLE_DASHBOARD.LONG_TERM_EMPLOYEES.INFO",
+    "variants": { "ar": { "text": "ما هي الحصة المسموح بها؟" } }
+  },
+  "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES": {
+    "text": "Temporary employees",
+    "api_id": "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES",
+    "component_api_id": "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES",
+    "variants": { "ar": { "text": "موظفون مؤقتون" } }
+  },
+  "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES.DESECRIPTION": {
+    "text": "Visas you can issue for your employees for 3 months or less.",
+    "api_id": "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES.DESECRIPTION",
+    "component_api_id": "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES.DESECRIPTION",
+    "variants": { "ar": { "text": "يمكنك إصدار تأشيرات لموظفيك لمدة 3 أشهر أو أقل." } }
+  },
+  "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES.INFO": {
+    "text": "What is a Temporary Visa?",
+    "api_id": "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES.INFO",
+    "component_api_id": "EXAMPLE_DASHBOARD.TEMPORARY_EMPLOYEES.INFO",
+    "variants": { "ar": { "text": "ما هي التأشيرة المؤقتة؟" } }
+  },
+  "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEES": {
+    "text": "Seasonal employees",
+    "api_id": "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEES",
+    "component_api_id": "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEES",
+    "variants": { "ar": { "text": "الموظفون الموسميون" } }
+  },
+  "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEES.DESECRIPTION": {
+    "text": "Visas you can issue for your employees for the Haji Season.",
+    "api_id": "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEES.DESECRIPTION",
+    "component_api_id": "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEES.DESECRIPTION",
+    "variants": { "ar": { "text": "يمكنك إصدار تأشيرات لموظفيك لموسم الحج." } }
+  },
+  "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEE.INFO": {
+    "text": "What is a Seasonal Visa?",
+    "api_id": "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEE.INFO",
+    "component_api_id": "EXAMPLE_DASHBOARD.SEASONAL_EMPLOYEE.INFO",
+    "variants": { "ar": { "text": "ما هي التأشيرة الموسمية؟" } }
+  }
+}
