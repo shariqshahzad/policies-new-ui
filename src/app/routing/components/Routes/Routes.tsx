@@ -23,6 +23,7 @@ import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
 import { Layout } from 'src/app/shared/components/Layout';
 import Breadcrumb from 'src/components/breadCrumb';
 import CompanyDetails from 'src/app/Pages/companyDetails/CompanyDetails';
+import PolicyReviewRequest from 'src/app/Pages/policyReviewRequest/PolicyReviewRequest';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
@@ -48,6 +49,7 @@ const PublicReviewRequests = React.lazy(
 const Companies = React.lazy(
   lazyLoaderRetry(() => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/companies/index')),
 );
+
 const CompanyClerks = React.lazy(
   lazyLoaderRetry(
     () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/companyClerks/index'),
@@ -78,6 +80,7 @@ const AppRouter = createBrowserRouterWithSentry(
         <Route path={AuthRoute.dashboard} element={<PublicReviewRequests />} />
         <Route path={AuthRoute.companies} element={<Companies />} />
         <Route path={`${AuthRoute.companies}/:companyId`} element={<CompanyDetails />} />
+        <Route path={`${AuthRoute.policyReviewRequest}`} element={<PolicyReviewRequest />} />
         <Route path={AuthRoute.companyClerk} element={<CompanyClerks />} />
         <Route path={AuthRoute.lawofficeinfos} element={<LawOfficeInfos />} />
         <Route path={AuthRoute.contactInformation} element={<MLSDContactInformation />} />

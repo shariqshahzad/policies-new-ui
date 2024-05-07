@@ -18,7 +18,7 @@ const mhrsdContactInfo: MHRSDContactInfo[] = [
 const MHRSDContactInformationComponent: React.FC = () => {
   const columns: string[] = ['ID', 'Phone', 'Fax', 'Email'];
 
-  const renderActions = (rowData: MHRSDContactInfo) => {
+  const renderActions = (isMobileWidth: boolean, variant: string, rowData: MHRSDContactInfo) => {
     return (
       <Button variant="business_ghost" size="small" onClick={() => handleView(rowData)}>
         View

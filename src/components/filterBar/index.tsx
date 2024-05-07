@@ -1,12 +1,14 @@
 import React from 'react';
 import { ButtonGroup, Button, FilledBadge } from '@takamol/qiwa-design-system/components';
 import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
+import { TonalAndFilledBadgeVariant } from '@takamol/qiwa-design-system/components/Badge/types';
+import { ButtonVariant } from '@takamol/qiwa-design-system/components/Button/types';
 
 type ButtonData = {
   label: string;
-  badgeVariant: string;
+  badgeVariant: TonalAndFilledBadgeVariant;
   badgeCount: number;
-  buttonVariant: string;
+  buttonVariant: ButtonVariant;
 };
 
 type Props = {
@@ -31,7 +33,7 @@ const FilterHeader = ({ buttonsData }: Props) => {
       </ButtonGroup>
     </>
   ) : (
-    ''
+    null
   );
 };
 
