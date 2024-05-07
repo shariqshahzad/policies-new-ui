@@ -5,7 +5,6 @@ import { Route, createRoutesFromElements } from 'react-router-dom';
 
 import { App } from 'src/App';
 import { LawOfficeLayout } from 'src/app/shared/components/LawOfficeLayout';
-import { Layout } from 'src/app/shared/components/Layout';
 import { ProcessLayout } from 'src/app/shared/components/ProcessLayout';
 import { PublicBusinessLayout } from 'src/app/shared/components/PublicBusinessLayout';
 import { PublicIndividualsLayout } from 'src/app/shared/components/PublicIndividualsLayout';
@@ -19,6 +18,7 @@ import { AccountAndNavigationLayout } from 'src/app/shared/components/AccountAnd
 import { lazyLoaderRetry } from '../../utils/lazyLoaderRetry';
 import { BubbleError } from '../BubbleError';
 import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLoader';
+import { AdminLayout } from 'src/app/shared/components/AdminLayout';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
@@ -40,11 +40,11 @@ const AppRouter = createBrowserRouterWithSentry(
     <Route path="/" errorElement={<BubbleError />} element={<App />}>
       <Route
         element={
-          <Layout>
+          <AdminLayout>
             <PrivateRoute>
               <OutletWithPageLoader />
             </PrivateRoute>
-          </Layout>
+          </AdminLayout>
         }
       >
         <Route path={AuthRoute.dashboard} element={<ExampleDashboard />} />
