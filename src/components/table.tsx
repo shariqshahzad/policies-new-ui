@@ -1,7 +1,7 @@
 import React from 'react';
 import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
 import { useId, useState } from 'react';
-import { Box, Table, Pagination } from '@takamol/qiwa-design-system/components';
+import { Box, Table, Pagination, Button } from '@takamol/qiwa-design-system/components';
 
 interface Row {
   [key: string]: string | number; // Adjust this according to your data types
@@ -54,6 +54,19 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
                 <Table.Cell key={`cell-${rowIndex}-${key}`}>{value}</Table.Cell>
               ))}
               {!isMobileWidth && (
+                // <Table.Cell alignCenter hideInPrint>
+                //   {renderActions(isMobileWidth, variant)}
+                // </Table.Cell>
+                // <Button
+                //   variant="business_ghost"
+                //   onClick={(event) => {
+                //     event?.stopPropagation();
+                //     // onActionClick(event);
+                //   }}
+                //   size="small"
+                // >
+                //   View
+                // </Button>
                 <Table.Cell alignCenter hideInPrint>
                   {renderActions(isMobileWidth, variant)}
                 </Table.Cell>
@@ -63,7 +76,34 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
         </Table.Body>
       </Table>
       <Box width="100%" align="flex-end" pb={32}>
-        <Pagination currentPage={currentPage} total={data.length} itemsPerPage={5} onChange={handleChange} />
+        <Pagination
+          currentPage={currentPage}
+          itemsPerPage={5}
+          onChange={handleChange}
+          summaryLabel={({ start, end, total }) => `${start}-${end} of ${total} items`}
+          total={data.length}
+          variant="business"
+          rowsSelectHelperText="Rows per page"
+          rowsSelectOnChange={() => {}}
+          rowsSelectOptions={[
+            {
+              option: '5',
+              value: '5',
+            },
+            {
+              option: '10',
+              value: '10',
+            },
+            {
+              option: '15',
+              value: '15',
+            },
+            {
+              option: '20',
+              value: '20',
+            },
+          ]}
+        />
       </Box>
     </Box>
   );

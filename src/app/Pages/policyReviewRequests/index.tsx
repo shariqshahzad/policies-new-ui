@@ -31,7 +31,7 @@ const companyData: CompanyData = {
 };
 
 const policyReviewRequests: React.FC = () => {
-  const data: CompanyData[] = Array(7)
+  const data: CompanyData[] = Array(8)
     .fill(null)
     .map(() => ({
       ...companyData,
@@ -52,7 +52,18 @@ const policyReviewRequests: React.FC = () => {
   ];
 
   const renderActions = () => {
-    return <Button>View</Button>;
+    return (
+      <Button
+        variant="business_ghost"
+        onClick={(event) => {
+          event?.stopPropagation();
+          // onActionClick(event);
+        }}
+        size="small"
+      >
+        View
+      </Button>
+    );
   };
 
   const variant: string = ''; // Define your variant
