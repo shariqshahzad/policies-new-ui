@@ -35,6 +35,12 @@ const ExampleDashboard = React.lazy(
   ),
 );
 
+const PublicReviewRequests = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/policyReviewRequests/index'),
+  ),
+);
+
 const AppRouter = createBrowserRouterWithSentry(
   createRoutesFromElements(
     <Route path="/" errorElement={<BubbleError />} element={<App />}>
@@ -47,7 +53,7 @@ const AppRouter = createBrowserRouterWithSentry(
           </Layout>
         }
       >
-        <Route path={AuthRoute.dashboard} element={<ExampleDashboard />} />
+        <Route path={AuthRoute.dashboard} element={<PublicReviewRequests />} />
         <Route
           path={AuthRoute.example}
           element={
