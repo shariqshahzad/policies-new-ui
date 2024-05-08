@@ -19,6 +19,7 @@ import { lazyLoaderRetry } from '../../utils/lazyLoaderRetry';
 import { BubbleError } from '../BubbleError';
 import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLoader';
 import { AdminLayout } from 'src/app/shared/components/AdminLayout';
+import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
@@ -41,6 +42,24 @@ const PublicReviewRequests = React.lazy(
   ),
 );
 
+const Companies = React.lazy(
+  lazyLoaderRetry(() => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/companies/index')),
+);
+const CompanyClerks = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/companyClerks/index'),
+  ),
+);
+const LawOfficeInfos = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/LawOfficesInfos/index'),
+  ),
+);
+const MLSDContactInformation = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/mlsdContactInformation/index'),
+  ),
+);
 const AppRouter = createBrowserRouterWithSentry(
   createRoutesFromElements(
     <Route path="/" errorElement={<BubbleError />} element={<App />}>
@@ -54,6 +73,12 @@ const AppRouter = createBrowserRouterWithSentry(
         }
       >
         <Route path={AuthRoute.dashboard} element={<PublicReviewRequests />} />
+        <Route path={AuthRoute.companies} element={<Companies />} />
+        <Route path={AuthRoute.companyClerk} element={<CompanyClerks />} />
+        <Route path={AuthRoute.lawofficeinfos} element={<LawOfficeInfos />} />
+        <Route path={AuthRoute.contactInformation} element={<MLSDContactInformation />} />
+        <Route path={AuthRoute.activityRecords} element={<ActivityRecordsComponent />} />
+
         <Route
           path={AuthRoute.example}
           element={

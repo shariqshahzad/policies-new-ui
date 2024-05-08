@@ -1,5 +1,10 @@
 export enum AuthRoute {
   dashboard = '/',
+  companies = '/companies',
+  companyClerk = '/company-clerks',
+  lawofficeinfos = '/law-office-infos',
+  contactInformation = '/mlsd_contact_infos',
+  activityRecords = '/activity-records',
   example = '/example',
   exampleMikro = '/example-mikro',
   exampleModuleFederation = '/example-module-federation',
