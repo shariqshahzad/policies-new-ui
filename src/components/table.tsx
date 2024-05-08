@@ -9,7 +9,7 @@ interface Row {
 
 interface Props {
   columns: string[];
-  data: Row[];
+  data: any;
   renderActions: (isMobileWidth: boolean, variant: string) => React.ReactNode;
   variant: string;
 }
@@ -34,17 +34,16 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
 
   return (
     <Box direction="column" gap={32} width={['100%', '100%']} bgColor="grayscale_0" padding={8}>
-      <Table>
+      <Table isLoading={false} isStriped={true} width="100%" hasColumnsAlwaysVisible={true}>
         <Table.Head>
           <Table.Row>
             {columns.map((column) => (
               <Table.HeadCell key={column}>{column}</Table.HeadCell>
             ))}
-            {!isMobileWidth && (
-              <Table.HeadCell alignCenter hideInPrint>
-                Actions
-              </Table.HeadCell>
-            )}
+
+            <Table.HeadCell alignCenter hideInPrint>
+              Actions
+            </Table.HeadCell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -53,24 +52,10 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
               {Object.entries(row).map(([key, value]) => (
                 <Table.Cell key={`cell-${rowIndex}-${key}`}>{value}</Table.Cell>
               ))}
-              {!isMobileWidth && (
-                // <Table.Cell alignCenter hideInPrint>
-                //   {renderActions(isMobileWidth, variant)}
-                // </Table.Cell>
-                // <Button
-                //   variant="business_ghost"
-                //   onClick={(event) => {
-                //     event?.stopPropagation();
-                //     // onActionClick(event);
-                //   }}
-                //   size="small"
-                // >
-                //   View
-                // </Button>
-                <Table.Cell alignCenter hideInPrint>
-                  {renderActions(isMobileWidth, variant)}
-                </Table.Cell>
-              )}
+
+              <Table.Cell alignCenter hideInPrint>
+                {renderActions(isMobileWidth, variant)}
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

@@ -1,40 +1,14 @@
 import React from 'react';
 import DynamicTable from '../../../components/table';
 import { Button } from '@takamol/qiwa-design-system/components';
-
-interface CompanyData {
-  id: number;
-  companyName: string;
-  companyNumber: string;
-  contactPersonName: string;
-  contactPersonCityName: string;
-  status: string;
-  policyType: string;
-  lawOfficeCountEmployees: number;
-  reviewer: string;
-  unassignedBefore: string;
-  pendingMHRSDAccreditationDate: string;
-}
-
-const companyData: CompanyData = {
-  id: 25756,
-  companyName: 'شركة ابناء قاسم محمد احمد الدريويش',
-  companyNumber: '1-693',
-  contactPersonName: 'ashraf abdalkader',
-  contactPersonCityName: 'الرياض',
-  status: 'Accredited by MHRSD',
-  policyType: 'Standard Policy',
-  lawOfficeCountEmployees: 16,
-  reviewer: 'NO',
-  unassignedBefore: 'Yes',
-  pendingMHRSDAccreditationDate: 'yes',
-};
+import { Policy } from 'src/interfaces/policy.type';
+import { policyData } from 'src/data/policy.data';
 
 const policyReviewRequests: React.FC = () => {
-  const data: CompanyData[] = Array(8)
+  const data: Policy[] = Array(8)
     .fill(null)
     .map(() => ({
-      ...companyData,
+      ...policyData,
     }));
 
   const columns: string[] = [
