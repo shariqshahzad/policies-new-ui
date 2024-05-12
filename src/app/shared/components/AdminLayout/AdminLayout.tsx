@@ -2,7 +2,6 @@ import {
   Menu,
   Box,
   NavigationGroup,
-  Link,
   Text,
   MenuTrigger,
   Navigation,
@@ -13,8 +12,9 @@ import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
 import { i18nContextManager } from '@takamol/react-qiwa-core';
 import React from 'react';
 import { useLocale } from 'src/app/translations/hooks/useLocale';
-
+import { Link } from 'react-router-dom';
 import qiwaTransparentLogo from 'src/assets/images/qiwa-logo-header.svg';
+import BreadCrumb from 'src/components/breadCrumb';
 
 interface AdminLayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -30,6 +30,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           <Box maxWidth={100} justify={'center'}>
             <img src={qiwaTransparentLogo} alt="" loading="lazy" />
           </Box>
+
           {/* <Navigation variant="business">
 
     </Navigation> */}
@@ -51,10 +52,10 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                 >
                   <Menu maxWidth={300}>
                     <Menu.Section>
-                      <Link href='/'>
+                      <Link to="/">
                         <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
                       </Link>
-                      <Link href='/'>
+                      <Link to="/">
                         <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
                       </Link>
                       {/* <Box bgColor="danger_100" height={50}>
@@ -78,11 +79,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                   }
                 >
                   <Menu maxWidth={300}>
-                  <Menu.Section>
-                      <Link href='/companies'>
+                    <Menu.Section>
+                      <Link to="/companies">
                         <NavigationGroup.Item color="business_500">Companies</NavigationGroup.Item>
                       </Link>
-                      <Link href='/company-clerks'>
+                      <Link to="/company-clerks">
                         <NavigationGroup.Item color="business_500">Company Clerks</NavigationGroup.Item>
                       </Link>
                       {/* <Box bgColor="danger_100" height={50}>
@@ -107,11 +108,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                   }
                 >
                   <Menu maxWidth={300}>
-                  <Menu.Section>
-                      <Link href='/law-office-infos'>
+                    <Menu.Section>
+                      <Link to="/law-office-infos">
                         <NavigationGroup.Item color="business_500">Law Office Infos</NavigationGroup.Item>
                       </Link>
-                      <Link href='/company-clerks'>
+                      <Link to="/company-clerks">
                         <NavigationGroup.Item color="business_500">Company Clerks</NavigationGroup.Item>
                       </Link>
                       {/* <Box bgColor="danger_100" height={50}>
@@ -123,7 +124,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
               </Box>
               <Box margin={10} align="center" direction="row" width="fit-content">
                 {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                <Link href="/companies" isUnderlined={false}>
+                <Link to="/companies" isUnderlined={false}>
                   <Text variant="body-l" weight="medium" color="business_50">
                     Companies Status
                   </Text>
@@ -131,7 +132,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
               </Box>
               <Box margin={10} align="center" direction="row" width="fit-content">
                 {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                <Link href="/mlsd_contact_infos" isUnderlined={false}>
+                <Link to="/mlsd_contact_infos" isUnderlined={false}>
                   <Text variant="body-l" weight="medium" color="business_50">
                     MHRSD Contact Information
                   </Text>
@@ -139,7 +140,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
               </Box>
               <Box margin={10} align="center" direction="row" width="fit-content">
                 {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                <Link href="/activity-records" isUnderlined={false}>
+                <Link to="/activity-records" isUnderlined={false}>
                   <Text variant="body-l" weight="medium" color="business_50">
                     Activity records
                   </Text>
@@ -190,7 +191,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           )}
         </Box>
       </Box>
-
+      <Box ps={20} bgColor="grayscale_800">
+        {/* <Box justify="space-around" height={80} width={'100%'} direction="row"> */}
+        <BreadCrumb />
+        {/* </Box> */}
+      </Box>
       <Box>{children}</Box>
     </div>
   );

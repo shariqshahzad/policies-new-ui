@@ -34,7 +34,7 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
 
   return (
     <Box direction="column" gap={32} width={['100%', '100%']} bgColor="grayscale_0" padding={8}>
-      <Table isLoading={false} isStriped={true} width="100%" hasColumnsAlwaysVisible={true}>
+      <Table width="100%" >
         <Table.Head>
           <Table.Row>
             {columns.map((column) => (

@@ -1,4 +1,4 @@
-import { Box } from '@takamol/qiwa-design-system/components';
+import { Box, Breadcrumbs } from '@takamol/qiwa-design-system/components';
 import { ErrorPage, PrivateRoute } from '@takamol/react-qiwa-core';
 import * as React from 'react';
 import { Route, createRoutesFromElements } from 'react-router-dom';
@@ -21,6 +21,7 @@ import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLo
 import { AdminLayout } from 'src/app/shared/components/AdminLayout';
 import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
 import { Layout } from 'src/app/shared/components/Layout';
+import Breadcrumb from 'src/components/breadCrumb';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
