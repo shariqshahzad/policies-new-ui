@@ -191,7 +191,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           )}
         </Box>
       </Box>
-      <Box ps={20} bgColor="grayscale_800">
+      <Box ps={20} bgColor="grayscale_700">
         {/* <Box justify="space-around" height={80} width={'100%'} direction="row"> */}
         <BreadCrumb />
         {/* </Box> */}

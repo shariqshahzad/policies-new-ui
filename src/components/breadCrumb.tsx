@@ -13,7 +13,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ homeLabel = 'Home' }) => {
   let lastPart = urlParts[urlParts.length - 1];
 
   // Check if the current path is "/"
-  if (currentPath === '/') {    
+  if (currentPath === '/') {
     lastPart = 'Policies Review Requests';
   }
 
@@ -43,7 +43,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ homeLabel = 'Home' }) => {
           })}
         </Breadcrumbs>
 
-        <Text weight="bold" ps={10} align="start" color="info_50" variant="heading-l">
+        <Text weight="semibold" ps={10} align="start" color="info_50" variant="heading-s">
           {formatLastPart(lastPart)}
         </Text>
       </Box>
