@@ -17,7 +17,7 @@ const BusinessLayout = ({ children }: LayoutProps) => {
   return (
     <div>
       <BusinessNavigation />
-      <Box direction="row" align="stretch">
+      {/* <Box direction="row" align="stretch">
         {isFullDesktopWidth && <Sidebar />}
         {isTabletWidth && (
           <Drawer
@@ -44,7 +44,7 @@ const BusinessLayout = ({ children }: LayoutProps) => {
           </Drawer>
         )}
         <Box>{children}</Box>
-      </Box>
+      </Box> */}
       <Footer />
     </div>
   );

@@ -4,7 +4,7 @@
   "description": "Boilerplate for starting new React projects for Qiwa",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && tsc --pretty --noEmit && webpack --config scripts/build.ts --node-env=production",
+    "build": "tsc --pretty --noEmit && webpack --config scripts/build.ts --node-env=production",
     "webpack-start": "webpack serve --config scripts/start.ts --node-env=development",
     "start": "npm run create-config-json && npm run webpack-start",
     "run-mock-server": "cross-env HTTPS=false APP_API_MOCK=true npm run webpack-start",

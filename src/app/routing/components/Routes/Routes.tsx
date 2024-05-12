@@ -20,6 +20,7 @@ import { BubbleError } from '../BubbleError';
 import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLoader';
 import { AdminLayout } from 'src/app/shared/components/AdminLayout';
 import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
+import { Layout } from 'src/app/shared/components/Layout';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
@@ -91,9 +92,9 @@ const AppRouter = createBrowserRouterWithSentry(
 
       <Route
         element={
-          <PublicBusinessLayout>
+          <Layout>
             <OutletWithPageLoader />
-          </PublicBusinessLayout>
+          </Layout>
         }
       >
         <Route path={PublicRoute.examplePublic} element={<ExamplePublicDashboard />} />
