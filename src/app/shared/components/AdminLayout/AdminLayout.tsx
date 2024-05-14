@@ -1,19 +1,24 @@
+import { User } from '@sentry/react';
 import {
-  Menu,
+  useNavigationContext,
   Box,
-  NavigationGroup,
-  Text,
   MenuTrigger,
+  WorkspaceItem,
+  Menu,
+  Link,
+  Avatar,
+  Text,
+  NavigationGroup,
   Navigation,
-  Icon,
+  Search,
+  FilterChip,
+  Notification,
+  BoxProps,
+  Card,
 } from '@takamol/qiwa-design-system/components';
-import { Globe, User } from '@takamol/qiwa-design-system/icons';
+import { Home, Schedule, Company, Suitcase, Graph, Info, Bell, Globe } from '@takamol/qiwa-design-system/icons';
 import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
-import { i18nContextManager } from '@takamol/react-qiwa-core';
-import React from 'react';
-import { useLocale } from 'src/app/translations/hooks/useLocale';
-import { Link } from 'react-router-dom';
-import qiwaTransparentLogo from 'src/assets/images/qiwa-logo-header.svg';
+import React, { useState } from 'react';
 import BreadCrumb from 'src/components/breadCrumb';
 
 interface AdminLayoutProps {
@@ -21,183 +26,151 @@ interface AdminLayoutProps {
 }
 
 const AdminLayout = ({ children }: AdminLayoutProps) => {
-  const { t, locale, setLocale } = useLocale();
-  const { isMobileWidth } = useWindowUtils();
+  const { isMobileWidth, isTabletWidth, isSmallDesktopWidth } = useWindowUtils();
+
+  const { handleSetIsMobileMenuVisible, variant } = useNavigationContext();
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleClick = () => {
+    handleSetIsMobileMenuVisible(false);
+  };
+
+  const handleSetSearchValue = (value: string) => {
+    setSearchValue(value);
+  };
   return (
-    <div>
-      <Box bgColor="grayscale_800">
-        <Box height={72} width={'100%'} justify={'space-between'} direction="row">
-          <Box maxWidth={100} justify={'center'}>
-            <img src={qiwaTransparentLogo} alt="" loading="lazy" />
-          </Box>
+    <>
+      <Navigation variant={variant}>
+        <Navigation.Action label="Policies" icon={Globe} onClick={handleClick} hasBottomMobileAction>
+          <>
+            <Menu>
+              <Menu.Section>
+                <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
 
-          {/* <Navigation variant="business">
+                <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
 
-    </Navigation> */}
-          {isMobileWidth ? null : (
-            <Box margin={10} align="center" justify="flex-start" direction="row" height={45}>
-              <Box margin={10} width="fit-content" align="center" justify="flex-start" direction="row" height={45}>
-                <MenuTrigger
-                  iconColor="business_50"
-                  menuOffset={[0, 33]}
-                  menuPlacement="bottom"
-                  triggerElement={
-                    <Box align="center" direction="row" width="fit-content">
-                      {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                      <Text variant="body-l" weight="medium" color="business_50">
-                        Policies
-                      </Text>
-                    </Box>
-                  }
-                >
-                  <Menu maxWidth={300}>
-                    <Menu.Section>
-                      <Link to="/">
-                        <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
-                      </Link>
-                      <Link to="/">
-                        <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
-                      </Link>
-                      {/* <Box bgColor="danger_100" height={50}>
+                {/* <Box bgColor="danger_100" height={50}>
+      
+        </Box> */}
+              </Menu.Section>
+            </Menu>
+          </>
+        </Navigation.Action>
+        <Navigation.Action label="Companies" icon={Globe} onClick={handleClick} hasBottomMobileAction>
+          <>
+            <Menu>
+              <Menu.Section>
+                <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
 
-  </Box> */}
-                    </Menu.Section>
-                  </Menu>
-                </MenuTrigger>
-              </Box>
-              <Box margin={10} width="fit-content" align="center" justify="flex-start" direction="row" height={45}>
-                <MenuTrigger
-                  iconColor="business_50"
-                  menuOffset={[0, 33]}
-                  menuPlacement="bottom"
-                  triggerElement={
-                    <Box align="center" direction="row" gap={8} width="fit-content">
-                      <Text variant="body-l" weight="medium" color="business_50">
-                        Companies
-                      </Text>
-                    </Box>
-                  }
-                >
-                  <Menu maxWidth={300}>
-                    <Menu.Section>
-                      <Link to="/companies">
-                        <NavigationGroup.Item color="business_500">Companies</NavigationGroup.Item>
-                      </Link>
-                      <Link to="/company-clerks">
-                        <NavigationGroup.Item color="business_500">Company Clerks</NavigationGroup.Item>
-                      </Link>
-                      {/* <Box bgColor="danger_100" height={50}>
+                <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
 
-  </Box> */}
-                    </Menu.Section>
-                  </Menu>
-                </MenuTrigger>
-              </Box>
-              <Box margin={10} width="fit-content" align="center" justify="flex-start" direction="row" height={45}>
-                <MenuTrigger
-                  iconColor="business_50"
-                  menuOffset={[0, 33]}
-                  menuPlacement="bottom"
-                  triggerElement={
-                    <Box align="center" direction="row" width="fit-content">
-                      {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                      <Text variant="body-l" weight="medium" color="business_50">
-                        Law Offices
-                      </Text>
-                    </Box>
-                  }
-                >
-                  <Menu maxWidth={300}>
-                    <Menu.Section>
-                      <Link to="/law-office-infos">
-                        <NavigationGroup.Item color="business_500">Law Office Infos</NavigationGroup.Item>
-                      </Link>
-                      <Link to="/company-clerks">
-                        <NavigationGroup.Item color="business_500">Company Clerks</NavigationGroup.Item>
-                      </Link>
-                      {/* <Box bgColor="danger_100" height={50}>
+                {/* <Box bgColor="danger_100" height={50}>
+      
+        </Box> */}
+              </Menu.Section>
+            </Menu>
+          </>
+        </Navigation.Action>
+        <Navigation.Action label="Law Offices" icon={Globe} onClick={handleClick} hasBottomMobileAction>
+          <>
+            <Menu>
+              <Menu.Section>
+                <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
 
-  </Box> */}
-                    </Menu.Section>
-                  </Menu>
-                </MenuTrigger>
-              </Box>
-              <Box margin={10} align="center" direction="row" width="fit-content">
-                {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                <Link to="/companies" isUnderlined={false}>
-                  <Text variant="body-l" weight="medium" color="business_50">
-                    Companies Status
-                  </Text>
+                <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
+
+                {/* <Box bgColor="danger_100" height={50}>
+      
+        </Box> */}
+              </Menu.Section>
+            </Menu>
+          </>
+        </Navigation.Action>
+        <Navigation.Action label="Companies Status" icon={Globe} onClick={handleClick}>
+          {null}
+        </Navigation.Action>
+        <Navigation.Action label="MHRSD Contact Info" icon={Globe} onClick={handleClick}>
+          {null}
+        </Navigation.Action>
+        <Navigation.Action label="Activity records" icon={Globe} onClick={handleClick}>
+          {null}
+        </Navigation.Action>
+        {!isMobileWidth ? (
+          <Navigation.Action label="EN" icon={Globe}>
+            <Menu maxWidth={375}>
+              <Menu.Section>
+                <NavigationGroup activeDecorator="check" variant={variant}>
+                  <NavigationGroup.Item onClick={handleClick} isActive={true} href="#0" iconComponent={Globe}>
+                    English (EN)
+                  </NavigationGroup.Item>
+                  <NavigationGroup.Item onClick={handleClick} href="#0" iconComponent={Globe}>
+                    (AR) عربي
+                  </NavigationGroup.Item>
+                </NavigationGroup>
+              </Menu.Section>
+            </Menu>
+          </Navigation.Action>
+        ) : null}
+        {/* <Navigation.Action label="Abbad Masood" icon={Globe} onClick={handleClick} hasBottomMobileAction>
+          <>
+            <Menu>
+              <Menu.Section>
+                <WorkspaceItem
+                  name="Muhammad Assad"
+                  id="1-2300423445"
+                  colorVariant={variant}
+                  fontSize="large"
+                  fontWeight="semibold"
+                  onClick={handleClick}
+                />
+              </Menu.Section>
+              <Menu.Section>
+                <NavigationGroup variant={variant}>
+                  <NavigationGroup.Item onClick={handleClick} href="#0">
+                    Edit profile info
+                  </NavigationGroup.Item>
+                  <NavigationGroup.Item onClick={handleClick} href="#0">
+                    Change password
+                  </NavigationGroup.Item>
+                </NavigationGroup>
+              </Menu.Section>
+              <Menu.Section>
+                <Link onClick={handleClick} variant={variant} href="#0">
+                  Change workspace
                 </Link>
-              </Box>
-              <Box margin={10} align="center" direction="row" width="fit-content">
-                {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                <Link to="/mlsd_contact_infos" isUnderlined={false}>
-                  <Text variant="body-l" weight="medium" color="business_50">
-                    MHRSD Contact Information
-                  </Text>
-                </Link>
-              </Box>
-              <Box margin={10} align="center" direction="row" width="fit-content">
-                {/* <Icon background="business_100" color="grayscale_800" iconComponent={User} padding={8} size={24} /> */}
-                <Link to="/activity-records" isUnderlined={false}>
-                  <Text variant="body-l" weight="medium" color="business_50">
-                    Activity records
-                  </Text>
-                </Link>
-              </Box>
-            </Box>
-          )}
-
-          {isMobileWidth ? null : (
-            <Box margin={10} mt={12} width="fit-content" justify="flex-end" direction="row" height={45}>
-              <MenuTrigger
-                iconColor="business_50"
-                menuOffset={[0, 33]}
-                menuPlacement="bottom"
-                triggerElement={
-                  <Box align="center" direction="row" gap={8} width="fit-content">
-                    <Icon background="business_100" color="grayscale_800" iconComponent={Globe} padding={8} size={24} />
-                    <Text variant="body-l" weight="medium" color="business_50">
-                      {locale.toUpperCase()}
-                    </Text>
-                  </Box>
-                }
-              >
-                <Menu maxWidth={300}>
-                  <Menu.Section>
-                    <NavigationGroup.Item
-                      onClick={() => {
-                        setLocale('en');
-                      }}
-                      isActive={locale === 'en'}
-                      color="business_500"
-                    >
+              </Menu.Section>
+              <Menu.Section>
+                <NavigationGroup variant={variant}>
+                  <NavigationGroup.Item onClick={handleClick} href="#0">
+                    Log out
+                  </NavigationGroup.Item>
+                </NavigationGroup>
+              </Menu.Section>
+            </Menu>
+            {isMobileWidth ? (
+              <Box position="absolute" bottom={0} start={0} width="100vw">
+                <Navigation.Language label="EN" backLinkLabel="Back" modalHeading="Select your language">
+                  <NavigationGroup activeDecorator="check" variant={variant}>
+                    <NavigationGroup.Item onClick={handleClick} isActive={true} href="#0" iconComponent={Globe}>
                       English (EN)
                     </NavigationGroup.Item>
-                    <NavigationGroup.Item
-                      onClick={() => {
-                        setLocale('ar');
-                      }}
-                      isActive={locale === 'ar'}
-                      color="business_500"
-                    >
-                      Arabic (AR)
+                    <NavigationGroup.Item onClick={handleClick} href="#0" iconComponent={Globe}>
+                      (AR) عربي
                     </NavigationGroup.Item>
-                  </Menu.Section>
-                </Menu>
-              </MenuTrigger>
-            </Box>
-          )}
-        </Box>
-      </Box>
+                  </NavigationGroup>
+                </Navigation.Language>
+              </Box>
+            ) : null}
+          </>
+        </Navigation.Action> */}
+      </Navigation>
       <Box ps={20} bgColor="grayscale_800">
         {/* <Box justify="space-around" height={80} width={'100%'} direction="row"> */}
         <BreadCrumb />
         {/* </Box> */}
       </Box>
-      <Box>{children}</Box>
-    </div>
+      {children}
+    </>
   );
 };
 

@@ -33,8 +33,9 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
   const { isMobileWidth } = useWindowUtils(); // Assuming you have useWindowUtils defined somewhere
 
   return (
-    <Box direction="column" gap={32} width={['100%', '100%']} bgColor="grayscale_0" padding={8}>
-      <Table width="100%" >
+    <Box padding={8}>
+      <Box direction="column" width="auto" margin={10} bgColor="grayscale_0">
+      <Table >
         <Table.Head>
           <Table.Row>
             {columns.map((column) => (
@@ -53,14 +54,14 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
                 <Table.Cell key={`cell-${rowIndex}-${key}`}>{value}</Table.Cell>
               ))}
 
-              <Table.Cell alignCenter hideInPrint>
+              <Table.Cell alignEnd hideInPrint>
                 {renderActions(isMobileWidth, variant)}
               </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
-      <Box width="100%" align="flex-end" pb={32}>
+      <Box padding={16} >
         <Pagination
           currentPage={currentPage}
           itemsPerPage={5}
@@ -90,6 +91,8 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
           ]}
         />
       </Box>
+      </Box>
+
     </Box>
   );
 };

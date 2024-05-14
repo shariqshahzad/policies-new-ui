@@ -26,9 +26,9 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ homeLabel = 'Home' }) => {
 
   return (
     <>
-      <Box>
+      <Box padding={10}>
         <Breadcrumbs variant="light">
-          <Breadcrumbs.Item href="/">{homeLabel}</Breadcrumbs.Item>
+          <Breadcrumbs.Item href="/" >{homeLabel}</Breadcrumbs.Item>
           {urlParts.map((part: any, index: any) => {
             if (part && part !== '/') {
               const isCurrent = index === urlParts.length - 1;
@@ -43,7 +43,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ homeLabel = 'Home' }) => {
           })}
         </Breadcrumbs>
 
-        <Text weight="bold" ps={10} align="start" color="info_50" variant="heading-l">
+        <Text pt={2} weight="bold" align="start" color="info_50" variant={"heading-s"}>
           {formatLastPart(lastPart)}
         </Text>
       </Box>
