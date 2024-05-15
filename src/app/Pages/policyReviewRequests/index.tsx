@@ -1,5 +1,5 @@
 import React from 'react';
-import DynamicTable from '../../../components/table';
+import DynamicTable from '../../../components/TableLayout/table';
 import { Button } from '@takamol/qiwa-design-system/components';
 import { Policy } from 'src/interfaces/policy.type';
 import { policyData } from 'src/data/policy.data';

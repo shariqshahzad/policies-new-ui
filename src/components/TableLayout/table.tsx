@@ -33,8 +33,8 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
   const { isMobileWidth } = useWindowUtils(); // Assuming you have useWindowUtils defined somewhere
 
   return (
-    <Box direction="column" gap={32} width={['100%', '100%']} bgColor="grayscale_0" padding={8}>
-      <Table width="100%" >
+    <Box direction="column" gap={32} width={['100%', '100%']} bgColor="grayscale_0" px={20}>
+      <Table hasCheckboxesOrRadio={true} width="100%">
         <Table.Head>
           <Table.Row>
             {columns.map((column) => (
@@ -60,7 +60,7 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
           ))}
         </Table.Body>
       </Table>
-      <Box width="100%" align="flex-end" pb={32}>
+      <Box width="100%" align="flex-end" px={20} pb={32}>
         <Pagination
           currentPage={currentPage}
           itemsPerPage={5}

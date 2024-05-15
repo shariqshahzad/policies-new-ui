@@ -14,7 +14,7 @@ import React from 'react';
 import { useLocale } from 'src/app/translations/hooks/useLocale';
 import { Link } from 'react-router-dom';
 import qiwaTransparentLogo from 'src/assets/images/qiwa-logo-header.svg';
-import BreadCrumb from 'src/components/breadCrumb';
+import BreadCrumb from 'src/components/BreadCrumb/index';
 
 interface AdminLayoutProps {
   children: JSX.Element | JSX.Element[];

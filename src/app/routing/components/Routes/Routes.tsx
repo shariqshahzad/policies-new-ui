@@ -21,7 +21,6 @@ import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLo
 import { AdminLayout } from 'src/app/shared/components/AdminLayout';
 import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
 import { Layout } from 'src/app/shared/components/Layout';
-import Breadcrumb from 'src/components/breadCrumb';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
@@ -54,7 +53,7 @@ const CompanyClerks = React.lazy(
 );
 const LawOfficeInfos = React.lazy(
   lazyLoaderRetry(
-    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/LawOfficesInfos/index'),
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/lawOfficesInfos/index'),
   ),
 );
 const MLSDContactInformation = React.lazy(

@@ -1,5 +1,5 @@
 import React from 'react';
-import DynamicTable from '../../../components/table';
+import DynamicTable from '../../../components/TableLayout/table';
 import { Button } from '@takamol/qiwa-design-system/components';
 
 // Define interface for MHRSD Contact Information data
