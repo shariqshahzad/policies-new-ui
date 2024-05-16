@@ -1,5 +1,6 @@
 import React from 'react';
 import { ButtonGroup, Button, FilledBadge } from '@takamol/qiwa-design-system/components';
+import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
 
 type ButtonData = {
   label: string;
@@ -13,18 +14,24 @@ type Props = {
 };
 
 const FilterButtonComponent = ({ buttonsData }: Props) => {
-  return (
-    <ButtonGroup direction="row" size="small">
-      {buttonsData.map((button, index) => (
-        <Button
-          key={index}
-          badge={<FilledBadge variant={button.badgeVariant}>{button.badgeCount}</FilledBadge>}
-          variant={button.buttonVariant}
-        >
-          {button.label}
-        </Button>
-      ))}
-    </ButtonGroup>
+  const { isMobileWidth } = useWindowUtils();
+
+  return !isMobileWidth ? (
+    <>
+      <ButtonGroup direction="row" size="small">
+        {buttonsData.map((button, index) => (
+          <Button
+            key={index}
+            badge={<FilledBadge variant={button.badgeVariant}>{button.badgeCount}</FilledBadge>}
+            variant={button.buttonVariant}
+          >
+            {button.label}
+          </Button>
+        ))}
+      </ButtonGroup>
+    </>
+  ) : (
+    ''
   );
 };
 
