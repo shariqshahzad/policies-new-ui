@@ -20,6 +20,7 @@ import { Home, Schedule, Company, Suitcase, Graph, Info, Bell, Globe } from '@ta
 import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
 import React, { useState } from 'react';
 import BreadCrumb from 'src/components/breadCrumb';
+import FilterButtonComponent from 'src/components/filterBar';
 
 interface AdminLayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -169,6 +170,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
         <BreadCrumb />
         {/* </Box> */}
       </Box>
+
       {children}
     </>
   );

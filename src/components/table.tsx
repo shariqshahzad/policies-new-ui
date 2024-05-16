@@ -35,64 +35,63 @@ const DynamicTable: React.FC<Props> = ({ columns, data, renderActions, variant }
   return (
     <Box padding={8}>
       <Box direction="column" width="auto" margin={10} bgColor="grayscale_0">
-      <Table >
-        <Table.Head>
-          <Table.Row>
-            {columns.map((column) => (
-              <Table.HeadCell key={column}>{column}</Table.HeadCell>
-            ))}
-
-            <Table.HeadCell alignCenter hideInPrint>
-              Actions
-            </Table.HeadCell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {data.map((row, rowIndex) => (
-            <Table.Row key={`row-${rowIndex}`}>
-              {Object.entries(row).map(([key, value]) => (
-                <Table.Cell key={`cell-${rowIndex}-${key}`}>{value}</Table.Cell>
+        <Table>
+          <Table.Head>
+            <Table.Row>
+              {columns.map((column) => (
+                <Table.HeadCell key={column}>{column}</Table.HeadCell>
               ))}
 
-              <Table.Cell alignEnd hideInPrint>
-                {renderActions(isMobileWidth, variant)}
-              </Table.Cell>
+              <Table.HeadCell alignCenter hideInPrint>
+                Actions
+              </Table.HeadCell>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-      <Box padding={16} >
-        <Pagination
-          currentPage={currentPage}
-          itemsPerPage={5}
-          onChange={handleChange}
-          summaryLabel={({ start, end, total }) => `${start}-${end} of ${total} items`}
-          total={data.length}
-          variant="business"
-          rowsSelectHelperText="Rows per page"
-          rowsSelectOnChange={() => {}}
-          rowsSelectOptions={[
-            {
-              option: '5',
-              value: '5',
-            },
-            {
-              option: '10',
-              value: '10',
-            },
-            {
-              option: '15',
-              value: '15',
-            },
-            {
-              option: '20',
-              value: '20',
-            },
-          ]}
-        />
-      </Box>
-      </Box>
+          </Table.Head>
+          <Table.Body>
+            {data.map((row, rowIndex) => (
+              <Table.Row key={`row-${rowIndex}`}>
+                {Object.entries(row).map(([key, value]) => (
+                  <Table.Cell key={`cell-${rowIndex}-${key}`}>{value}</Table.Cell>
+                ))}
 
+                <Table.Cell alignEnd hideInPrint>
+                  {renderActions(isMobileWidth, variant)}
+                </Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+        <Box padding={16}>
+          <Pagination
+            currentPage={currentPage}
+            itemsPerPage={5}
+            onChange={handleChange}
+            summaryLabel={({ start, end, total }) => `${start}-${end} of ${total} items`}
+            total={data.length}
+            variant="business"
+            rowsSelectHelperText="Rows per page"
+            rowsSelectOnChange={() => {}}
+            rowsSelectOptions={[
+              {
+                option: '5',
+                value: '5',
+              },
+              {
+                option: '10',
+                value: '10',
+              },
+              {
+                option: '15',
+                value: '15',
+              },
+              {
+                option: '20',
+                value: '20',
+              },
+            ]}
+          />
+        </Box>
+      </Box>
     </Box>
   );
 };
