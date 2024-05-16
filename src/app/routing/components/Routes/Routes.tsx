@@ -22,6 +22,7 @@ import { AdminLayout } from 'src/app/shared/components/AdminLayout';
 import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
 import { Layout } from 'src/app/shared/components/Layout';
 import Breadcrumb from 'src/components/breadCrumb';
+import CompanyDetails from 'src/app/Pages/companyDetails/CompanyDetails';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
@@ -76,6 +77,7 @@ const AppRouter = createBrowserRouterWithSentry(
       >
         <Route path={AuthRoute.dashboard} element={<PublicReviewRequests />} />
         <Route path={AuthRoute.companies} element={<Companies />} />
+        <Route path={`${AuthRoute.companies}/:companyId`} element={<CompanyDetails />} />
         <Route path={AuthRoute.companyClerk} element={<CompanyClerks />} />
         <Route path={AuthRoute.lawofficeinfos} element={<LawOfficeInfos />} />
         <Route path={AuthRoute.contactInformation} element={<MLSDContactInformation />} />

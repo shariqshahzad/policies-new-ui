@@ -19,6 +19,8 @@ import {
 import { Home, Schedule, Company, Suitcase, Graph, Info, Bell, Globe } from '@takamol/qiwa-design-system/icons';
 import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
 import BreadCrumb from 'src/components/breadCrumb';
 import FilterButtonComponent from 'src/components/filterBar';
 
@@ -39,6 +41,13 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
   const handleSetSearchValue = (value: string) => {
     setSearchValue(value);
   };
+
+  const navigate = useNavigate();
+
+  const redirectTo = (route: string) => {
+    navigate(route);
+  };
+
   return (
     <>
       <Navigation variant={variant}>
@@ -46,9 +55,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           <>
             <Menu>
               <Menu.Section>
-                <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
+                <NavigationGroup.Item onClick={() => redirectTo(AuthRoute.dashboard)} color="business_500">Policy Review Requests</NavigationGroup.Item>
 
-                <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
+                <NavigationGroup.Item onClick={() => redirectTo(AuthRoute.activityRecords)} color="business_500">Old Policies</NavigationGroup.Item>
 
                 {/* <Box bgColor="danger_100" height={50}>
       
@@ -61,9 +70,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           <>
             <Menu>
               <Menu.Section>
-                <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
+                <NavigationGroup.Item onClick={() => redirectTo(AuthRoute.companies)} color="business_500">
+                  Companies
+                </NavigationGroup.Item>
 
-                <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
+                <NavigationGroup.Item onClick={() => redirectTo(AuthRoute.companyClerk)} color="business_500">Company Clerks</NavigationGroup.Item>
 
                 {/* <Box bgColor="danger_100" height={50}>
       
@@ -76,9 +87,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
           <>
             <Menu>
               <Menu.Section>
-                <NavigationGroup.Item color="business_500">Policy Review Requests</NavigationGroup.Item>
-
-                <NavigationGroup.Item color="business_500">Old Policies</NavigationGroup.Item>
+                <NavigationGroup.Item onClick={() => redirectTo(AuthRoute.lawofficeinfos)} color="business_500">Law Office Infos</NavigationGroup.Item>
 
                 {/* <Box bgColor="danger_100" height={50}>
       
@@ -87,13 +96,13 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
             </Menu>
           </>
         </Navigation.Action>
-        <Navigation.Action label="Companies Status" icon={Globe} onClick={handleClick}>
+        <Navigation.Action label="Companies Status" onClick={() => redirectTo(AuthRoute.contactInformation)} icon={Globe} >
           {null}
         </Navigation.Action>
-        <Navigation.Action label="MHRSD Contact Info" icon={Globe} onClick={handleClick}>
+        <Navigation.Action label="MHRSD Contact Info" onClick={() => redirectTo(AuthRoute.contactInformation)} icon={Globe} >
           {null}
         </Navigation.Action>
-        <Navigation.Action label="Activity records" icon={Globe} onClick={handleClick}>
+        <Navigation.Action label="Activity records" onClick={() => redirectTo(AuthRoute.activityRecords)} icon={Globe} >
           {null}
         </Navigation.Action>
         {!isMobileWidth ? (
