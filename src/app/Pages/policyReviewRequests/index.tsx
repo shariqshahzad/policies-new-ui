@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DynamicTable from '../../../components/table';
-import { Box, Button } from '@takamol/qiwa-design-system/components';
+import { Blanket, Box, Button } from '@takamol/qiwa-design-system/components';
 import { Policy } from 'src/interfaces/policy.type';
 import { policyData } from 'src/data/policy.data';
-import FilterButtonComponent from 'src/components/filterBar';
+import FilterHeader from 'src/components/filterBar';
+import FilterSideBar from 'src/components/filterSideBar';
+import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
 
 const policyReviewRequests: React.FC = () => {
+  const { isMobileWidth } = useWindowUtils();
+
   const data: Policy[] = Array(8)
     .fill(null)
     .map(() => ({
@@ -53,11 +57,24 @@ const policyReviewRequests: React.FC = () => {
 
   return (
     <>
-      <Box ps={20} height={80} padding={40}>
-        <FilterButtonComponent buttonsData={buttonsData} />
-      </Box>
+      <Box width="100%" direction="row">
+        <Box width={!isMobileWidth ? '80%' : '100%'}>
+          <Box ps={20} height={80} padding={40}>
+            <FilterHeader buttonsData={buttonsData} />
+          </Box>
+          <DynamicTable columns={columns} data={data} renderActions={renderActions} variant={variant} />
+        </Box>
 
-      <DynamicTable columns={columns} data={data} renderActions={renderActions} variant={variant} />
+        {!isMobileWidth && (
+          <>
+            {/* <Blanket isOpened={true} onClick={toggleIsOpened} align="stretch" justify="flex-end"> */}
+            <Box width="20%">
+              <FilterSideBar />
+            </Box>
+            {/* </Blanket> */}
+          </>
+        )}
+      </Box>
     </>
   );
 };
