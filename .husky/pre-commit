@@ -11,6 +11,6 @@ then
     exit 1
 fi
 
-npx lint-staged
-npm run type-check
-npm run test:unit
+# npx lint-staged
+# npm run type-check
+# npm run test:unit

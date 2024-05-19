@@ -8,7 +8,7 @@ process.env.BABEL_ENV = NodeEnvironment.development;
 // https://employeesgate.atlassian.net/wiki/spaces/QFA/pages/4263215146/How+to+start#Set-development-host-address
 const serviceName = 'dev.react-starter.qiwa.info'; // This is used only for the starter purpose
 const host = process.env.APP_API_MOCK ? 'localhost' : serviceName;
-const defaultPort = Number(process.env.PORT) || 8080;
+const defaultPort = Number(process.env.PORT) || 8082;
 
 export default () => {
   return new Promise((resolve) => {

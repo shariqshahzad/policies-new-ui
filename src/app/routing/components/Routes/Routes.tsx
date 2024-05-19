@@ -1,11 +1,10 @@
-import { Box } from '@takamol/qiwa-design-system/components';
+import { Box, Breadcrumbs } from '@takamol/qiwa-design-system/components';
 import { ErrorPage, PrivateRoute } from '@takamol/react-qiwa-core';
 import * as React from 'react';
 import { Route, createRoutesFromElements } from 'react-router-dom';
 
 import { App } from 'src/App';
 import { LawOfficeLayout } from 'src/app/shared/components/LawOfficeLayout';
-import { Layout } from 'src/app/shared/components/Layout';
 import { ProcessLayout } from 'src/app/shared/components/ProcessLayout';
 import { PublicBusinessLayout } from 'src/app/shared/components/PublicBusinessLayout';
 import { PublicIndividualsLayout } from 'src/app/shared/components/PublicIndividualsLayout';
@@ -19,6 +18,11 @@ import { AccountAndNavigationLayout } from 'src/app/shared/components/AccountAnd
 import { lazyLoaderRetry } from '../../utils/lazyLoaderRetry';
 import { BubbleError } from '../BubbleError';
 import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLoader';
+import { AdminLayout } from 'src/app/shared/components/AdminLayout';
+import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
+import { Layout } from 'src/app/shared/components/Layout';
+import Breadcrumb from 'src/components/breadCrumb';
+import CompanyDetails from 'src/app/Pages/companyDetails/CompanyDetails';
 
 const ExamplePublicDashboard = React.lazy(
   lazyLoaderRetry(
@@ -35,19 +39,50 @@ const ExampleDashboard = React.lazy(
   ),
 );
 
+const PublicReviewRequests = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/policyReviewRequests/index'),
+  ),
+);
+
+const Companies = React.lazy(
+  lazyLoaderRetry(() => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/companies/index')),
+);
+const CompanyClerks = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/companyClerks/index'),
+  ),
+);
+const LawOfficeInfos = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/LawOfficesInfos/index'),
+  ),
+);
+const MLSDContactInformation = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/mlsdContactInformation/index'),
+  ),
+);
 const AppRouter = createBrowserRouterWithSentry(
   createRoutesFromElements(
     <Route path="/" errorElement={<BubbleError />} element={<App />}>
       <Route
         element={
-          <Layout>
+          <AdminLayout>
             <PrivateRoute>
               <OutletWithPageLoader />
             </PrivateRoute>
-          </Layout>
+          </AdminLayout>
         }
       >
-        <Route path={AuthRoute.dashboard} element={<ExampleDashboard />} />
+        <Route path={AuthRoute.dashboard} element={<PublicReviewRequests />} />
+        <Route path={AuthRoute.companies} element={<Companies />} />
+        <Route path={`${AuthRoute.companies}/:companyId`} element={<CompanyDetails />} />
+        <Route path={AuthRoute.companyClerk} element={<CompanyClerks />} />
+        <Route path={AuthRoute.lawofficeinfos} element={<LawOfficeInfos />} />
+        <Route path={AuthRoute.contactInformation} element={<MLSDContactInformation />} />
+        <Route path={AuthRoute.activityRecords} element={<ActivityRecordsComponent />} />
+
         <Route
           path={AuthRoute.example}
           element={
@@ -60,9 +95,9 @@ const AppRouter = createBrowserRouterWithSentry(
 
       <Route
         element={
-          <PublicBusinessLayout>
+          <Layout>
             <OutletWithPageLoader />
-          </PublicBusinessLayout>
+          </Layout>
         }
       >
         <Route path={PublicRoute.examplePublic} element={<ExamplePublicDashboard />} />

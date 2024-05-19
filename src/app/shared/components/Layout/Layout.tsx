@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const { accountType } = useAuth();
 
-  if (accountType === 'business') return <BusinessLayout>{children}</BusinessLayout>;
+  return <BusinessLayout>{children}</BusinessLayout>;
 
   return <IndividualsLayout>{children}</IndividualsLayout>;
 };
