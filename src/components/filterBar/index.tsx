@@ -13,7 +13,7 @@ type Props = {
   buttonsData: ButtonData[];
 };
 
-const FilterButtonComponent = ({ buttonsData }: Props) => {
+const FilterHeader = ({ buttonsData }: Props) => {
   const { isMobileWidth } = useWindowUtils();
 
   return !isMobileWidth ? (
@@ -35,4 +35,4 @@ const FilterButtonComponent = ({ buttonsData }: Props) => {
   );
 };
 
-export default FilterButtonComponent;
+export default FilterHeader;
