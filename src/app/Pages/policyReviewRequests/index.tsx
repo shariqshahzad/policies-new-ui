@@ -63,7 +63,7 @@ const policyReviewRequests: React.FC = () => {
     <>
       <Box direction={['column', 'row']} justify={'space-between'}>
         <Box direction={['column', 'column']}>
-          <Box height={[400, 80]} bgColor="nitaqat_lowGreen">
+          <Box height={[400, 80]}>
             <FilterHeader buttonsData={buttonsData} />
           </Box>
 
