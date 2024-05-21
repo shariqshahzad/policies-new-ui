@@ -47,7 +47,7 @@ const policyReviewRequests: React.FC = () => {
         variant="business_ghost"
         onClick={(event) => {
           event?.stopPropagation();
-          navigate('policy-review-request/request-id-here')
+          navigate('policy-review-request/request-id-here');
           // onActionClick(event);
         }}
         size="small"
@@ -61,7 +61,7 @@ const policyReviewRequests: React.FC = () => {
 
   return (
     <>
-      <Box direction={['column', 'row']} gap={[12, 24]}>
+      <Box direction="row" justify={'space-between'}>
         <Box>
           <Box ps={20} height={80} padding={40}>
             <FilterHeader buttonsData={buttonsData} />
@@ -69,7 +69,7 @@ const policyReviewRequests: React.FC = () => {
           <DynamicTable columns={columns} data={data} renderActions={renderActions} variant={variant} />
         </Box>
 
-        <Box>
+        <Box width="20%">
           <FilterSideBar />
         </Box>
       </Box>

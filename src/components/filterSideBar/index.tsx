@@ -29,49 +29,15 @@ const FilterSideBar = (props: Props) => {
           </Text>
         </Box>
         {Fields.map((item: any, index: number) => (
-          <Box key={index} direction='column'>
-            <Text  weight={'bold'} color="grayscale_500" variant={'special-caption'}>
+          <Box padding={[5, 10]} key={index} direction="column">
+            <Text weight="semibold" color="grayscale_500" variant={'body-s'}>
               {item.title}
             </Text>
             <Box gap={10} width={'100%'} direction={'row'} justify={'space-between'}>
               <Select
-              maxInputWidth="90%"
-                  id="select"
-                  placeholder="contains"
-                  //   onBlur={}
-                  //   onChange={}
-                  options={[
-                    { option: 'Status', value: 'item a' },
-                    { option: 'Item B', value: 'item b' },
-                    { option: 'Item C', value: 'item c' },
-                    { option: 'Item D', value: 'item d' },
-                    { option: 'Item E', value: 'item e' },
-                  ]}
-                  optionsListAriaLabel="select options"
-                  size="small"
-                  variant="individuals"
-                />
-                <Field
-                fieldWidth="90%"
-                  isSmall
-                  id="test"
-                  //   onChange={onChange}
-                  type="text"
-                />
-            </Box>
-          </Box>
-        ))}
-        {Fields2.map((item: any, index: number) => (
-          <Box margin={[5, 10]} key={index}>
-            <Text mx={[5, 10]} weight={'bold'} color="grayscale_500" variant={'special-caption'}>
-              {item.title}
-            </Text>
-            <Box mx={[5, 10]}>
-              <Select
-                size="small"
+                maxInputWidth="90%"
                 id="select"
-                placeholder="any"
-                maxInputWidth={['100%', 320]}
+                placeholder="contains"
                 //   onBlur={}
                 //   onChange={}
                 options={[
@@ -82,9 +48,38 @@ const FilterSideBar = (props: Props) => {
                   { option: 'Item E', value: 'item e' },
                 ]}
                 optionsListAriaLabel="select options"
+                size="small"
                 variant="individuals"
               />
+              <Field
+                fieldWidth="90%"
+                isSmall
+                id="test"
+                //   onChange={onChange}
+                type="text"
+              />
             </Box>
+          </Box>
+        ))}
+        {Fields2.map((item: any, index: number) => (
+          <Box padding={[5, 10]} key={index}>
+            <Text weight="semibold" color="grayscale_500" variant={'body-s'}>
+              {item.title}
+            </Text>
+            <Select
+              size="small"
+              id="select"
+              placeholder="any"
+              options={[
+                { option: 'Status', value: 'item a' },
+                { option: 'Item B', value: 'item b' },
+                { option: 'Item C', value: 'item c' },
+                { option: 'Item D', value: 'item d' },
+                { option: 'Item E', value: 'item e' },
+              ]}
+              optionsListAriaLabel="select options"
+              variant="individuals"
+            />
           </Box>
         ))}
         <Box align={'center'} mt={20}>
