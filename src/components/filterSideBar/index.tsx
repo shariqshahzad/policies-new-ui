@@ -22,23 +22,22 @@ const FilterSideBar = (props: Props) => {
   const toggleIsOpened = () => setIsOpened(!isOpened);
   return (
     <>
-      <Box margin={[10, 20]} borderRadius={8} width={['100%', 'auto']} bgColor="grayscale_0">
-        <Box px={[10, 20]} mb={10} borderRadius={8} bgColor="individuals_400">
+      <Box padding={[10, 20]} borderRadius={8} width={['100%', 'auto']} bgColor="grayscale_0">
+        <Box px={[10, 20]} borderRadius={8} bgColor="individuals_400">
           <Text variant={'special-caption'} weight={'bold'} color="grayscale_0" my={10}>
             Filters
           </Text>
         </Box>
         {Fields.map((item: any, index: number) => (
-          <Box margin={[5, 10]} key={index}>
-            <Text mx={[5, 10]} weight={'bold'} color="grayscale_500" variant={'special-caption'}>
+          <Box key={index} direction='column'>
+            <Text  weight={'bold'} color="grayscale_500" variant={'special-caption'}>
               {item.title}
             </Text>
-            <Box direction={['column', 'row']} mx={[5, 10]}>
-              <Box mb={[10, 0]}>
-                <Select
+            <Box gap={10} width={'100%'} direction={'row'} justify={'space-between'}>
+              <Select
+              maxInputWidth="90%"
                   id="select"
                   placeholder="contains"
-                  maxInputWidth={['100%', 150]}
                   //   onBlur={}
                   //   onChange={}
                   options={[
@@ -52,16 +51,13 @@ const FilterSideBar = (props: Props) => {
                   size="small"
                   variant="individuals"
                 />
-              </Box>
-              <Box mx={[0, 10]}>
                 <Field
+                fieldWidth="90%"
                   isSmall
                   id="test"
-                  maxInputWidth={130}
                   //   onChange={onChange}
                   type="text"
                 />
-              </Box>
             </Box>
           </Box>
         ))}

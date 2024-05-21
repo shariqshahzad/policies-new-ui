@@ -69,7 +69,7 @@ const policyReviewRequests: React.FC = () => {
           <DynamicTable columns={columns} data={data} renderActions={renderActions} variant={variant} />
         </Box>
 
-        <Box width="auto">
+        <Box>
           <FilterSideBar />
         </Box>
       </Box>
