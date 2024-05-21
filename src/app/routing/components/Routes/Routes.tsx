@@ -1,44 +1,19 @@
-import { Box, Breadcrumbs } from '@takamol/qiwa-design-system/components';
 import { ErrorPage, PrivateRoute } from '@takamol/react-qiwa-core';
 import * as React from 'react';
 import { Route, createRoutesFromElements } from 'react-router-dom';
-
 import { App } from 'src/App';
-import { LawOfficeLayout } from 'src/app/shared/components/LawOfficeLayout';
-import { ProcessLayout } from 'src/app/shared/components/ProcessLayout';
-import { PublicBusinessLayout } from 'src/app/shared/components/PublicBusinessLayout';
-import { PublicIndividualsLayout } from 'src/app/shared/components/PublicIndividualsLayout';
-import { UnifiedPortalLayout } from 'src/app/shared/components/UnifiedPortalLayout';
 import { createBrowserRouterWithSentry } from '../../../integrations/sentry';
 import { AuthRoute } from '../../enums/AuthRoute.enum';
 import { CoreRoute } from '../../enums/CoreRoute.enum';
-import { PublicRoute } from '../../enums/PublicRoute.enum';
-import { SharableServiceRoute } from '../../enums/SharableServiceRoute';
-import { AccountAndNavigationLayout } from 'src/app/shared/components/AccountAndNavigationLayout';
 import { lazyLoaderRetry } from '../../utils/lazyLoaderRetry';
 import { BubbleError } from '../BubbleError';
 import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLoader';
 import { AdminLayout } from 'src/app/shared/components/AdminLayout';
 import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
-import { Layout } from 'src/app/shared/components/Layout';
-import Breadcrumb from 'src/components/breadCrumb';
 import CompanyDetails from 'src/app/Pages/companyDetails/CompanyDetails';
 import PolicyReviewRequest from 'src/app/Pages/policyReviewRequest/PolicyReviewRequest';
-
-const ExamplePublicDashboard = React.lazy(
-  lazyLoaderRetry(
-    () =>
-      import(
-        /* webpackChunkName: "starter-example-public-dashboard" */ 'src/app/examplePublicDashboard/ExamplePublicDashboard'
-      ),
-  ),
-);
-
-const ExampleDashboard = React.lazy(
-  lazyLoaderRetry(
-    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/exampleDashboard/ExampleDashboard'),
-  ),
-);
+import Settings from 'src/app/Pages/settings';
+import AdminUsers from 'src/app/Pages/adminusers';
 
 const PublicReviewRequests = React.lazy(
   lazyLoaderRetry(
@@ -85,95 +60,9 @@ const AppRouter = createBrowserRouterWithSentry(
         <Route path={AuthRoute.lawofficeinfos} element={<LawOfficeInfos />} />
         <Route path={AuthRoute.contactInformation} element={<MLSDContactInformation />} />
         <Route path={AuthRoute.activityRecords} element={<ActivityRecordsComponent />} />
-
-        <Route
-          path={AuthRoute.example}
-          element={
-            <Box pt={24} pb={16} gap={16} direction="row" align="center">
-              <p>Example page</p>
-            </Box>
-          }
-        />
-      </Route>
-
-      <Route
-        element={
-          <Layout>
-            <OutletWithPageLoader />
-          </Layout>
-        }
-      >
-        <Route path={PublicRoute.examplePublic} element={<ExamplePublicDashboard />} />
-      </Route>
-
-      <Route
-        element={
-          <UnifiedPortalLayout>
-            <OutletWithPageLoader />
-          </UnifiedPortalLayout>
-        }
-      >
-        <Route path={SharableServiceRoute.unifiedPortal} element={<ExamplePublicDashboard />} />
-      </Route>
-
-      <Route
-        element={
-          <PublicIndividualsLayout>
-            <OutletWithPageLoader />
-          </PublicIndividualsLayout>
-        }
-      >
-        <Route path={PublicRoute.exampleIndividualPublic} element={<ExamplePublicDashboard />} />
-      </Route>
-
-      <Route
-        element={
-          <ProcessLayout>
-            <OutletWithPageLoader />
-          </ProcessLayout>
-        }
-      >
-        <Route path={AuthRoute.exampleProcess} element={<ExampleDashboard />} />
-      </Route>
-
-      <Route
-        element={
-          <LawOfficeLayout>
-            <OutletWithPageLoader />
-          </LawOfficeLayout>
-        }
-      >
-        <Route path={AuthRoute.exampleLawOffice} element={<ExampleDashboard />} />
-      </Route>
-
-      <Route
-        element={
-          <LawOfficeLayout>
-            <OutletWithPageLoader />
-          </LawOfficeLayout>
-        }
-      >
-        <Route path={AuthRoute.exampleLawOfficeHome} element={<ExampleDashboard />} />
-      </Route>
-
-      <Route
-        element={
-          <LawOfficeLayout>
-            <OutletWithPageLoader />
-          </LawOfficeLayout>
-        }
-      >
-        <Route path={AuthRoute.exampleLawOfficeWorkPolicies} element={<ExampleDashboard />} />
-      </Route>
-
-      <Route
-        element={
-          <AccountAndNavigationLayout>
-            <OutletWithPageLoader />
-          </AccountAndNavigationLayout>
-        }
-      >
-        <Route path={AuthRoute.exampleAccounWithNavigation} element={<ExampleDashboard />} />
+        <Route path={AuthRoute.settings} element={<Settings />} />
+        <Route path={AuthRoute.adminuser} element={<AdminUsers />} />
+        <Route path={AuthRoute.dashboard} element={<Dashboard />} />
       </Route>
 
       {/* Error handling routes */}

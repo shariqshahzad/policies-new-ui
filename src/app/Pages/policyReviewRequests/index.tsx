@@ -47,7 +47,7 @@ const policyReviewRequests: React.FC = () => {
         variant="business_ghost"
         onClick={(event) => {
           event?.stopPropagation();
-          navigate('policy-review-request/request-id-here')
+          navigate('policy-review-request/request-id-here');
           // onActionClick(event);
         }}
         size="small"
