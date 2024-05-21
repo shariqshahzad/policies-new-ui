@@ -22,7 +22,7 @@ const FilterSideBar = (props: Props) => {
   const toggleIsOpened = () => setIsOpened(!isOpened);
   return (
     <>
-      <Box padding={[10, 20]} borderRadius={8} width={['100%', 'auto']} bgColor="grayscale_0">
+      <Box padding={[10, 20]} borderRadius={8} width="100%" bgColor="grayscale_0">
         <Box px={[10, 20]} borderRadius={8} bgColor="individuals_400">
           <Text variant={'special-caption'} weight={'bold'} color="grayscale_0" my={10}>
             Filters
@@ -38,8 +38,6 @@ const FilterSideBar = (props: Props) => {
                 maxInputWidth="90%"
                 id="select"
                 placeholder="contains"
-                //   onBlur={}
-                //   onChange={}
                 options={[
                   { option: 'Status', value: 'item a' },
                   { option: 'Item B', value: 'item b' },
