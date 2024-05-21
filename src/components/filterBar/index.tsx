@@ -18,7 +18,7 @@ const FilterHeader = ({ buttonsData }: Props) => {
 
   return !isMobileWidth ? (
     <>
-      <ButtonGroup direction="row" size="small">
+      <ButtonGroup direction={['column', 'row']} size="small">
         {buttonsData.map((button, index) => (
           <Button
             key={index}

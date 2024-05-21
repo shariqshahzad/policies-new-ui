@@ -22,9 +22,6 @@ const FilterSideBar = (props: Props) => {
   const toggleIsOpened = () => setIsOpened(!isOpened);
   return (
     <>
-      {/* <Button onClick={toggleIsOpened}>Show blanket</Button> */}
-
-      {/* <Blanket isOpened={isOpened} onClick={toggleIsOpened} align="center" justify="flex-end" shouldCoverNavigation> */}
       <Box margin={[10, 20]} borderRadius={8} width={['100%', 'auto']} bgColor="grayscale_0">
         <Box px={[10, 20]} mb={10} borderRadius={8} bgColor="individuals_400">
           <Text variant={'special-caption'} weight={'bold'} color="grayscale_0" my={10}>
