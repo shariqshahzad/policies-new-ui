@@ -33,7 +33,7 @@ const FilterSideBar = (props: Props) => {
             <Text mx={[5, 10]} weight={'bold'} color="grayscale_500" variant={'special-caption'}>
               {item.title}
             </Text>
-            <Box direction={['column', 'row']} mx={[5, 10]} alignItems="center">
+            <Box direction={['column', 'row']} mx={[5, 10]}>
               <Box mb={[10, 0]}>
                 <Select
                   id="select"
