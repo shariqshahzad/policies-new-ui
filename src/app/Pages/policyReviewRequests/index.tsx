@@ -61,15 +61,16 @@ const policyReviewRequests: React.FC = () => {
 
   return (
     <>
-      <Box direction="row" justify={'space-between'}>
-        <Box>
-          <Box ps={20} height={80} padding={40}>
+      <Box direction={['column', 'row']} justify={'space-between'}>
+        <Box direction={['column', 'column']}>
+          <Box height={[400, 80]}>
             <FilterHeader buttonsData={buttonsData} />
           </Box>
+
           <DynamicTable columns={columns} data={data} renderActions={renderActions} variant={variant} />
         </Box>
 
-        <Box width="20%">
+        <Box width={['100%', '20%']}>
           <FilterSideBar />
         </Box>
       </Box>
