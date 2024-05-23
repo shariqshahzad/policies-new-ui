@@ -75,7 +75,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                         {
                           navigation.subMenu.map((subMenuItem, index) => (
                             <ActionsMenu>
-                              <ActionsMenuItem variant="individuals" onClick={() => navigate(`/${subMenuItem.link}`)}>
+                              <ActionsMenuItem variant="individuals" onClick={() => navigate(`${subMenuItem.link}`)}>
                                 {subMenuItem.title}
                               </ActionsMenuItem>
                             </ActionsMenu>
@@ -88,7 +88,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                 return (
                   <Box mx={10} width="fit-content" align="center" justify="flex-start" direction="row" height={38}>
                     <Text
-                      onClick={() => navigate('/companies')}
+                      onClick={() => navigate(navigation?.link)}
                       variant="special-captionSmall"
                       weight="medium"
                       color="business_50"
@@ -159,7 +159,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                         <Accordion.Header>{navigation.title}</Accordion.Header>
                         <Accordion.Content>
                           {navigation.subMenu.map((subMenu) => (
-                            <Box mb={4}  bgColor="business_50" padding={10}>
+                            <Box mb={4} bgColor="business_50" padding={10}>
                               <Text mx={8} weight={'bold'}>
                                 {subMenu.title}
                               </Text>

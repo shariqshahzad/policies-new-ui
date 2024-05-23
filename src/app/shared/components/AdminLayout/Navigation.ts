@@ -1,22 +1,25 @@
+import { paymentStatusLogs } from 'src/data/Payment.data';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
+
 export const navigations = [
   {
     title: 'Dashboard',
-    link: '/',
+    link: AuthRoute.dashboard,
   },
   {
     title: 'Policies',
     subMenu: [
       {
         title: 'Standard Policies',
-        link: '',
+        link: AuthRoute.standardPolicies,
       },
       {
         title: 'Policy Review Requests   ',
-        link: '',
+        link: AuthRoute.policyReviewRequest,
       },
       {
         title: 'Old Policies',
-        link: '',
+        link: AuthRoute.oldPolicies,
       },
     ],
   },
@@ -25,11 +28,11 @@ export const navigations = [
     subMenu: [
       {
         title: 'Companies',
-        link: '',
+        link: AuthRoute.companies,
       },
       {
         title: 'Company Clerks',
-        link: '',
+        link: AuthRoute.companyClerk,
       },
     ],
   },
@@ -38,66 +41,66 @@ export const navigations = [
     subMenu: [
       {
         title: 'Lawyers',
-        link: '',
+        link: AuthRoute.Lawyers,
       },
       {
         title: 'Law Office Infos',
-        link: '',
+        link: AuthRoute.lawofficeinfos,
       },
       {
         title: 'Check Eligibility Responses',
-        link: '',
+        link: AuthRoute.checkEligibilityResponse,
       },
     ],
   },
   {
     title: 'Cities',
-    link: '',
+    link: AuthRoute.cities,
   },
   {
     title: 'Admin Users',
-    link: '',
+    link: AuthRoute.adminuser,
   },
   {
     title: 'Company Status',
-    link: '',
+    link: AuthRoute.companies,
   },
   {
     title: 'Payments',
     subMenu: [
       {
         title: 'Invoices',
-        link: '',
+        link: AuthRoute.invoices,
       },
       {
         title: 'Payment Logs',
-        link: '',
+        link: AuthRoute.paymentLogs,
       },
       {
         title: 'Payment Status Logs',
-        link: '',
+        link: AuthRoute.paymentStatusLogs,
       },
       {
         title: 'Unified Invoices Logs',
-        link: '',
+        link: AuthRoute.unifiedinvoicelogs,
       },
     ],
   },
   {
     title: 'MHRSD',
-    link: '',
+    link: AuthRoute.contactInformation,
   },
 
   {
     title: 'Settings',
-    link: '',
+    link: AuthRoute.settings,
   },
   {
     title: 'Activity Records',
-    link: '',
+    link: AuthRoute.activityRecords,
   },
   {
     title: 'Statistics',
-    link: '',
+    link: AuthRoute.statistics,
   },
 ];
