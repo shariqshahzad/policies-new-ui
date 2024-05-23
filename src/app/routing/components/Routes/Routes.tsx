@@ -9,15 +9,19 @@ import { lazyLoaderRetry } from '../../utils/lazyLoaderRetry';
 import { BubbleError } from '../BubbleError';
 import { OutletWithPageLoader } from 'src/app/shared/components/OutletWithPageLoader';
 import { AdminLayout } from 'src/app/shared/components/AdminLayout';
-import ActivityRecordsComponent from 'src/app/Pages/activityRecords';
-import CompanyDetails from 'src/app/Pages/companyDetails/CompanyDetails';
-import PolicyReviewRequest from 'src/app/Pages/policyReviewRequest/PolicyReviewRequest';
-import Settings from 'src/app/Pages/settings';
-import AdminUsers from 'src/app/Pages/adminusers';
+import StandardPolicies from 'src/app/Pages/Policies/standardPolicies';
+import OldPolicies from 'src/app/Pages/Policies/oldPolicies';
+import Lawyers from 'src/app/Pages/lawOffices/Lawyers';
+import CheckEligibilityResponses from 'src/app/Pages/lawOffices/checkEligibilityResponses';
+import Cities from 'src/app/Pages/cities';
+import Invoices from 'src/app/Pages/payments/invoices';
+import PaymentLogs from 'src/app/Pages/payments/paymentLogs';
+import PaymentStatusLogs from 'src/app/Pages/payments/paymentStatusLogs';
 
 const PublicReviewRequests = React.lazy(
   lazyLoaderRetry(
-    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/policyReviewRequests/index'),
+    () =>
+      import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/Policies/policyReviewRequests/index'),
   ),
 );
 
@@ -32,7 +36,7 @@ const CompanyClerks = React.lazy(
 );
 const LawOfficeInfos = React.lazy(
   lazyLoaderRetry(
-    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/LawOfficesInfos/index'),
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/lawOffices/lawOfficesInfos/index'),
   ),
 );
 const MLSDContactInformation = React.lazy(
@@ -40,6 +44,38 @@ const MLSDContactInformation = React.lazy(
     () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/mlsdContactInformation/index'),
   ),
 );
+
+const ActivityRecordsComponent = React.lazy(
+  lazyLoaderRetry(() => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/activityRecords')),
+);
+
+const CompanyDetails = React.lazy(
+  lazyLoaderRetry(
+    () => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/companyDetails/CompanyDetails'),
+  ),
+);
+
+const PolicyReviewRequest = React.lazy(
+  lazyLoaderRetry(
+    () =>
+      import(
+        /* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/policyReviewRequest/PolicyReviewRequest'
+      ),
+  ),
+);
+
+const Settings = React.lazy(
+  lazyLoaderRetry(() => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/settings')),
+);
+
+const AdminUsers = React.lazy(
+  lazyLoaderRetry(() => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/adminusers')),
+);
+
+const Dashboard = React.lazy(
+  lazyLoaderRetry(() => import(/* webpackChunkName: "starter-example-dashboard" */ 'src/app/Pages/Dashboard')),
+);
+
 const AppRouter = createBrowserRouterWithSentry(
   createRoutesFromElements(
     <Route path="/" errorElement={<BubbleError />} element={<App />}>
@@ -52,19 +88,28 @@ const AppRouter = createBrowserRouterWithSentry(
           </AdminLayout>
         }
       >
-        <Route path={AuthRoute.dashboard} element={<PublicReviewRequests />} />
+        <Route path={AuthRoute.dashboard} element={<Dashboard />} />
+        <Route path={AuthRoute.policyReviewRequest} element={<PublicReviewRequests />} />
         <Route path={AuthRoute.companies} element={<Companies />} />
+        <Route path={AuthRoute.companyClerk} element={<CompanyClerks />} />
         <Route path={`${AuthRoute.companies}/:companyId`} element={<CompanyDetails />} />
         <Route path={`${AuthRoute.policyReviewRequest}`} element={<PolicyReviewRequest />} />
-        <Route path={AuthRoute.companyClerk} element={<CompanyClerks />} />
+        <Route path={`${AuthRoute.standardPolicies}`} element={<StandardPolicies />} />
+        <Route path={`${AuthRoute.oldPolicies}`} element={<OldPolicies />} />
+        <Route path={AuthRoute.Lawyers} element={<Lawyers />} />
         <Route path={AuthRoute.lawofficeinfos} element={<LawOfficeInfos />} />
+        <Route path={AuthRoute.checkEligibilityResponse} element={<CheckEligibilityResponses />} />
         <Route path={AuthRoute.contactInformation} element={<MLSDContactInformation />} />
+        <Route path={AuthRoute.cities} element={<Cities />} />
+        <Route path={AuthRoute.invoices} element={<Invoices />} />
+        <Route path={AuthRoute.paymentLogs} element={<PaymentLogs />} />
+        <Route path={AuthRoute.paymentStatusLogs} element={<PaymentStatusLogs />} />
+        <Route path={AuthRoute.unifiedinvoicelogs} element={<PaymentStatusLogs />} />
+
         <Route path={AuthRoute.activityRecords} element={<ActivityRecordsComponent />} />
         <Route path={AuthRoute.settings} element={<Settings />} />
         <Route path={AuthRoute.adminuser} element={<AdminUsers />} />
-        <Route path={AuthRoute.dashboard} element={<Dashboard />} />
       </Route>
-
       {/* Error handling routes */}
       <Route path={CoreRoute.error} element={<ErrorPage errorType="error" />} />
       <Route path={CoreRoute.badGateway} element={<ErrorPage errorType="bad-gateway" />} />

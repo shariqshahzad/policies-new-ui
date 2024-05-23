@@ -12,3 +12,20 @@ export interface LawOfficesInfos {
   Eligible: string;
   CreatedAt: string;
 }
+
+export interface Lawyer {
+  ID: number;
+  nationalId: string;
+  lawOffice: string;
+  name: string;
+  createdAt: string;
+}
+
+export interface CheckEligibilityResponse {
+  ID: number;
+  lawOfficeName: string;
+  laborOffice: number;
+  sequenceNumber: number;
+  responseCode: string;
+  createdAt: string;
+}

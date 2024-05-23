@@ -3,6 +3,7 @@ import DynamicTable from '../../../components/table';
 import { Box, Button } from '@takamol/qiwa-design-system/components';
 import FilterButtonComponent from 'src/components/filterBar';
 import { SettingsData } from 'src/data/settings.data';
+import { buttonsData } from 'src/interfaces/adminuser.type';
 
 const Settings: React.FC = () => {
   const columns: string[] = ['Name', 'Value', 'File', 'Updated at', 'Created at'];

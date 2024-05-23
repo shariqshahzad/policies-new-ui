@@ -1,4 +1,4 @@
-import { Policy } from 'src/interfaces/policy.type';
+import { OldPolicy, Policy, StandardPolicy } from 'src/interfaces/policy.type';
 
 export const policyData: Policy = {
   id: 25756,
@@ -13,3 +13,143 @@ export const policyData: Policy = {
   unassignedBefore: 'Yes',
   pendingMHRSDAccreditationDate: 'yes',
 };
+
+export const standardPolicies: StandardPolicy[] = [
+  {
+    ID: 6,
+    number: '2525',
+    active: 'NO',
+    Calendar: 'Hijiri',
+    'Number of workdays in a week': 3,
+    OffDays: 'Tuesday, Wednesday, Thursday, Friday',
+  },
+  {
+    ID: 7,
+    number: '22222222',
+    active: 'NO',
+    Calendar: 'Gregorian',
+    'Number of workdays in a week': 6,
+    OffDays: 'Tuesday, Wednesday, Thursday, Friday',
+  },
+  {
+    ID: 5,
+    number: '1112227',
+    active: 'NO',
+    Calendar: 'Hijiri',
+    'Number of workdays in a week': 6,
+    OffDays: 'Thursday',
+  },
+  {
+    ID: 1,
+    number: '229',
+    active: 'NO',
+    Calendar: 'Gregorian',
+    'Number of workdays in a week': 4,
+    OffDays: 'Sunday, Friday, Saturday',
+  },
+  {
+    ID: 4,
+    number: '111222',
+    active: 'NO',
+    Calendar: 'Hijiri',
+    'Number of workdays in a week': 6,
+    OffDays: 'Sunday',
+  },
+  {
+    ID: 2,
+    number: '1212',
+    active: 'NO',
+    Calendar: 'Gregorian',
+    'Number of workdays in a week': 6,
+    OffDays: 'Monday',
+  },
+  {
+    ID: 8,
+    number: '1245',
+    active: 'NO',
+    Calendar: 'Hijiri',
+    'Number of workdays in a week': 6,
+    OffDays: 'Monday',
+  },
+  {
+    ID: 9,
+    number: '12345',
+    active: 'YES',
+    Calendar: 'Gregorian',
+    'Number of workdays in a week': 5,
+    OffDays: 'Friday, Saturday',
+  },
+];
+
+export const oldPolicies: OldPolicy[] = [
+  {
+    ID: 91,
+    DataFile: 'companies_xlsx.xlsx',
+    AdminUser: 'أحمد محمد أحمد',
+    Status: 'Done',
+    CreatedAt: 'June 16, 2021 16:01',
+  },
+  {
+    ID: 92,
+    DataFile: 'companies_xlsx.xlsx',
+    AdminUser: 'أحمد محمد أحمد',
+    Status: 'Done',
+    CreatedAt: 'June 16, 2021 17:01',
+  },
+  {
+    ID: 93,
+    DataFile: 'companies_csv.csv',
+    AdminUser: 'أحمد محمد أحمد',
+    Status: 'Done',
+    CreatedAt: 'June 16, 2021 17:05',
+  },
+  {
+    ID: 94,
+    DataFile: 'Company_data.xlsx',
+    AdminUser: 'Admin user #51',
+    Status: 'Done',
+    CreatedAt: 'June 16, 2021 17:20',
+  },
+  {
+    ID: 95,
+    DataFile: 'Company_data.xlsx',
+    AdminUser: 'Admin user #51',
+    Status: 'Done',
+    CreatedAt: 'June 16, 2021 17:21',
+  },
+  {
+    ID: 96,
+    DataFile: 'بيانات_منشآت_اللوائح_المخصصة_القديمة__2_.xlsx',
+    AdminUser: 'Admin user #51',
+    Status: 'Failed',
+    CreatedAt: 'June 16, 2021 17:21',
+  },
+  {
+    ID: 97,
+    DataFile: 'بيانات_منشآت_اللوائح_المخصصة_القديمة__2_.xlsx',
+    AdminUser: 'Admin user #51',
+    Status: 'Failed',
+    CreatedAt: 'June 16, 2021 17:25',
+  },
+  {
+    ID: 98,
+    DataFile: 'بيانات_منشآت_اللوائح_المخصصة_القديمة__2_.xlsx',
+    AdminUser: 'Admin user #51',
+    Status: 'Failed',
+    CreatedAt: 'June 16, 2021 17:26',
+  },
+  {
+    ID: 99,
+    DataFile: 'Company_data.xlsx',
+    AdminUser: 'Admin user #71',
+    Status: 'Done',
+    CreatedAt: 'June 16, 2021 18:33',
+  },
+  {
+    ID: 100,
+    DataFile: 'companies_xlsx.xlsx',
+    AdminUser: 'أحمد محمد أحمد',
+    Status: 'Done',
+    CreatedAt: 'June 28, 2021 18:08',
+  },
+];
