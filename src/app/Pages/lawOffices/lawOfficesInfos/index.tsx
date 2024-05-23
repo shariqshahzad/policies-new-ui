@@ -1,5 +1,5 @@
 import React from 'react';
-import DynamicTable from '../../../components/table';
+import DynamicTable from '../../../../components/table';
 import { Box, Button } from '@takamol/qiwa-design-system/components';
 import { lawOfficesInfos } from 'src/data/LawOffices.data';
 import FilterButtonComponent from 'src/components/filterBar';
