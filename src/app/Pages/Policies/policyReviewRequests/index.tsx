@@ -61,23 +61,18 @@ const policyReviewRequests: React.FC = () => {
 
   return (
     <>
-      <Box width="100%" direction="row">
-        <Box width={!isMobileWidth ? '80%' : '100%'}>
-          <Box ps={20} height={80} padding={40}>
+      <Box direction={['column', 'row']} justify={'space-between'}>
+        <Box direction={['column', 'column']}>
+          <Box height={[400, 80]}>
             <FilterHeader buttonsData={buttonsData} />
           </Box>
+
           <DynamicTable columns={columns} data={data} renderActions={renderActions} variant={variant} />
         </Box>
 
-        {!isMobileWidth && (
-          <>
-            {/* <Blanket isOpened={true} onClick={toggleIsOpened} align="stretch" justify="flex-end"> */}
-            <Box width="20%">
-              <FilterSideBar />
-            </Box>
-            {/* </Blanket> */}
-          </>
-        )}
+        <Box width={['100%', '20%']}>
+          <FilterSideBar />
+        </Box>
       </Box>
     </>
   );
