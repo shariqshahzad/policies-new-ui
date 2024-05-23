@@ -11,3 +11,20 @@ export interface Policy {
   unassignedBefore: string;
   pendingMHRSDAccreditationDate: string;
 }
+
+export interface StandardPolicy {
+  ID: number;
+  number: string;
+  active: string;
+  Calendar: string;
+  'Number of workdays in a week': number;
+  OffDays?: string;
+}
+
+export interface OldPolicy {
+  ID: number;
+  DataFile: string;
+  AdminUser: string;
+  Status: string;
+  CreatedAt: string;
+}

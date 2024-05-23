@@ -1,4 +1,4 @@
-import { LawOfficesInfos } from 'src/interfaces/lawOfficeInfo.type';
+import { CheckEligibilityResponse, LawOfficesInfos, Lawyer } from 'src/interfaces/lawOfficeInfo.type';
 
 export const lawOfficesInfos: LawOfficesInfos[] = [
   {
@@ -72,4 +72,160 @@ export const lawOfficesInfos: LawOfficesInfos[] = [
     CreatedAt: '2024-05-08',
   },
   // Add more data as needed
+];
+
+export const lawyers: Lawyer[] = [
+  {
+    ID: 14009,
+    nationalId: '1014801565',
+    lawOffice: 'مؤسسة خدمات الوسيط للاتصالات وتقنية المعلومات',
+    name: 'أحمد النمر',
+    createdAt: 'May 15, 2024 10:33',
+  },
+  {
+    ID: 14008,
+    nationalId: '1077516035',
+    lawOffice: 'مؤسسة فنون الخدمات للتشغيل والصيانه',
+    name: 'ايمن التمامي',
+    createdAt: 'May 15, 2024 09:18',
+  },
+  {
+    ID: 14006,
+    nationalId: '1047051337',
+    lawOffice: 'شركة مصنع الوطن المحدودة, مصنع الوطن للاثاث وبرادات المياة',
+    name: 'محمد السليم',
+    createdAt: 'May 14, 2024 16:27',
+  },
+  {
+    ID: 14004,
+    nationalId: '1071854655',
+    lawOffice: 'مصنع الحجر المميز للرخام والحجر والجرانيت',
+    name: 'عمر العرنوس',
+    createdAt: 'May 09, 2024 10:40',
+  },
+  {
+    ID: 14003,
+    nationalId: '1005388754',
+    lawOffice: 'ورشه الغرابي لسمكره وبويه وكهرباء السيار',
+    name: '1005388754',
+    createdAt: 'May 08, 2024 17:44',
+  },
+  {
+    ID: 14002,
+    nationalId: '1091206803',
+    lawOffice: 'شركة الاتحاد الهندسي السعودية للاستشارات الهندسية خطيب وعلمي, فرع شركة الاتحاد الهندسي السعوديه',
+    name: '1091206803',
+    createdAt: 'May 06, 2024 15:59',
+  },
+  {
+    ID: 14001,
+    nationalId: '1034517456',
+    lawOffice: 'ورشة العريفي للسمكره والكهرباء, تنجيد سيارات',
+    name: '1034517456',
+    createdAt: 'May 06, 2024 15:25',
+  },
+  {
+    ID: 13997,
+    nationalId: '1020114045',
+    lawOffice: 'شركة الدهامي للتجارة والمقاولات (مساهمه مقفله)',
+    name: 'سامي الدهامي',
+    createdAt: 'April 16, 2024 11:04',
+  },
+  {
+    ID: 13996,
+    nationalId: '1034904480',
+    lawOffice: 'مؤسسة حديقة الشرفة للمقاولات',
+    name: 'محمد الشائق',
+    createdAt: 'April 16, 2024 07:45',
+  },
+  {
+    ID: 13995,
+    nationalId: '1001080389',
+    lawOffice: 'مؤسسه خالد علي الناصر للتجارة, مزرعة خالد علي الناصر',
+    name: 'خالد الناصر',
+    createdAt: 'January 23, 2024 01:40',
+  },
+];
+
+export const checkEligibilityResponses: CheckEligibilityResponse[] = [
+  {
+    ID: 211004,
+    lawOfficeName: 'شركة حمدان سعد الحمدان وأولاده للتجارة والمقاولات',
+    laborOffice: 20,
+    sequenceNumber: 1688672,
+    responseCode: '00000000',
+    createdAt: 'May 23, 2024 14:23',
+  },
+  {
+    ID: 211003,
+    lawOfficeName: 'الشركة الحديثة لصناعه المواد الغذائيه المحدوده',
+    laborOffice: 9,
+    sequenceNumber: 113180,
+    responseCode: '00000000',
+    createdAt: 'May 23, 2024 14:21',
+  },
+  {
+    ID: 211002,
+    lawOfficeName: 'الشركة الحديثة لصناعه المواد الغذائيه المحدوده',
+    laborOffice: 9,
+    sequenceNumber: 113180,
+    responseCode: '00000000',
+    createdAt: 'May 22, 2024 10:14',
+  },
+  {
+    ID: 211001,
+    lawOfficeName: 'شركة ابناء نهار جازي الرحيلي لتاجير السيارات',
+    laborOffice: 25,
+    sequenceNumber: 14015,
+    responseCode: '00000000',
+    createdAt: 'May 20, 2024 12:04',
+  },
+  {
+    ID: 211000,
+    lawOfficeName: 'شركة ابناء نهار جازي الرحيلي لتاجير السيارات',
+    laborOffice: 25,
+    sequenceNumber: 14015,
+    responseCode: '00000000',
+    createdAt: 'May 20, 2024 08:56',
+  },
+  {
+    ID: 210999,
+    lawOfficeName: 'شركة ابناء نهار جازي الرحيلي لتاجير السيارات',
+    laborOffice: 25,
+    sequenceNumber: 14015,
+    responseCode: '00000000',
+    createdAt: 'May 19, 2024 07:20',
+  },
+  {
+    ID: 210998,
+    lawOfficeName: 'شركة ابناء نهار جازي الرحيلي لتاجير السيارات',
+    laborOffice: 25,
+    sequenceNumber: 14015,
+    responseCode: '00000000',
+    createdAt: 'May 19, 2024 07:16',
+  },
+  {
+    ID: 210997,
+    lawOfficeName: 'شركة حمدان سعد الحمدان وأولاده للتجارة والمقاولات',
+    laborOffice: 20,
+    sequenceNumber: 1688672,
+    responseCode: '00000000',
+    createdAt: 'May 19, 2024 07:14',
+  },
+  {
+    ID: 210996,
+    lawOfficeName: 'شركة حمدان سعد الحمدان وأولاده للتجارة والمقاولات',
+    laborOffice: 20,
+    sequenceNumber: 1688672,
+    responseCode: '00000000',
+    createdAt: 'May 19, 2024 07:13',
+  },
+  {
+    ID: 210995,
+    lawOfficeName: 'شركة حمدان سعد الحمدان وأولاده للتجارة والمقاولات',
+    laborOffice: 20,
+    sequenceNumber: 1688672,
+    responseCode: '00000000',
+    createdAt: 'May 19, 2024 07:12',
+  },
 ];
