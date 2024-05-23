@@ -8,6 +8,7 @@ import FilterSideBar from 'src/components/filterSideBar';
 import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
 import FilterButtonComponent from 'src/components/filterBar';
 import { useNavigate } from 'react-router-dom';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
 
 const policyReviewRequests: React.FC = () => {
   const { isMobileWidth } = useWindowUtils();
@@ -47,7 +48,7 @@ const policyReviewRequests: React.FC = () => {
         variant="business_ghost"
         onClick={(event) => {
           event?.stopPropagation();
-          navigate('policy-review-request/request-id-here');
+          navigate(`${AuthRoute.policyReviewRequest}/1`);
           // onActionClick(event);
         }}
         size="small"

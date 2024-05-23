@@ -139,6 +139,7 @@
     "@tanstack/react-query": "4.29.5",
     "@tanstack/react-query-devtools": "4.29.6",
     "axios": "1.6.2",
+    "formik": "2.4.6",
     "lodash.setwith": "4.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",

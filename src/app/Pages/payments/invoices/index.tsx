@@ -3,6 +3,8 @@ import DynamicTable from '../../../../components/table';
 import { Button } from '@takamol/qiwa-design-system/components';
 import { Invoice } from '../../../../interfaces/payments.type';
 import { invoices } from 'src/data/Payment.data';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
+import { useNavigate } from 'react-router-dom';
 
 // Define interface for Invoices data
 
@@ -10,10 +12,11 @@ import { invoices } from 'src/data/Payment.data';
 
 const Invoices: React.FC = () => {
   const columns: string[] = ['Law Office', 'Company', 'Total Price'];
+  const navigate = useNavigate();
 
   const renderActions = (rowData: Invoice) => {
     return (
-      <Button variant="business_ghost" size="small" onClick={() => handleView(rowData)}>
+      <Button variant="business_ghost" size="small" onClick={() => navigate(`${AuthRoute.invoices}/1`)}>
         View
       </Button>
     );

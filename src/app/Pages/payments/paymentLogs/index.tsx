@@ -3,6 +3,8 @@ import DynamicTable from '../../../../components/table';
 import { Button } from '@takamol/qiwa-design-system/components';
 import { PaymentLog } from 'src/interfaces/payments.type';
 import { paymentLogs } from 'src/data/Payment.data';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
+import { useNavigate } from 'react-router-dom';
 
 // Define interface for Payment Logs data
 
@@ -21,15 +23,13 @@ const PaymentLogs: React.FC = () => {
   ];
 
   const renderActions = (rowData: PaymentLog) => {
+    const navigate = useNavigate();
+
     return (
-      <Button variant="business_ghost" size="small" onClick={() => handleView(rowData)}>
+      <Button variant="business_ghost" size="small" onClick={() => navigate(`${AuthRoute.paymentLogs}/1`)}>
         View
       </Button>
     );
-  };
-
-  const handleView = (rowData: PaymentLog) => {
-    console.log('View clicked for Payment Log ID:', rowData.id);
   };
 
   return (

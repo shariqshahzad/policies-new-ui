@@ -1,6 +1,6 @@
 import React from 'react';
 import DynamicTable from '../../../components/table';
-import { Button } from '@takamol/qiwa-design-system/components';
+import { Box, Button } from '@takamol/qiwa-design-system/components';
 import { Company } from '../../../interfaces/company.type';
 import { companies } from '../../../data/company.data';
 import { useNavigate } from 'react-router-dom';
@@ -15,9 +15,14 @@ const CompanyComponent: React.FC = () => {
       navigate(route);
     };
     return (
-      <Button onClick={() => redirectTo('/companies/company-id-here')} variant="business_ghost" size="small">
-        View
-      </Button>
+      <Box direction={'row'} justify={'center'} gap={6}>
+        <Button onClick={() => redirectTo('/companies/company-id-here')} variant="business_ghost" size="small">
+          View
+        </Button>
+        <Button onClick={() => redirectTo('/companies/company-id-here/edit')} variant="business_ghost" size="small">
+          Edit
+        </Button>
+      </Box>
     );
   };
 

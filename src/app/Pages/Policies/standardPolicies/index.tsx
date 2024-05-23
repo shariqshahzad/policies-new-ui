@@ -3,6 +3,8 @@ import DynamicTable from '../../../../components/table';
 import { Button, ButtonGroup } from '@takamol/qiwa-design-system/components';
 import { StandardPolicy } from 'src/interfaces/policy.type';
 import { standardPolicies } from 'src/data/policy.data';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
+import { useNavigate } from 'react-router-dom';
 
 // Define interface for Standard Policies data
 
@@ -10,12 +12,20 @@ import { standardPolicies } from 'src/data/policy.data';
 
 const StandardPolicies: React.FC = () => {
   const columns: string[] = ['ID', 'Number', 'Active', 'Calendar', 'Number of workdays in a week', 'Off days'];
-
+  const navigate = useNavigate();
   const renderActions = (rowData: StandardPolicy) => {
     return (
       <>
         <ButtonGroup size="small">
-          <Button variant="business_ghost" size="small" onClick={() => handleView(rowData)}>
+          <Button
+            variant="business_ghost"
+            size="small"
+            onClick={(event) => {
+              event?.stopPropagation();
+              navigate(`${AuthRoute.standardPolicies}/1`);
+              // onActionClick(event);
+            }}
+          >
             View
           </Button>
           <Button variant="business_ghost" size="small" onClick={() => handleEdit(rowData)}>

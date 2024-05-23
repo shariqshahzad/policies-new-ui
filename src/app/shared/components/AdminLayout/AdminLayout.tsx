@@ -2,23 +2,17 @@ import {
   Menu,
   Box,
   NavigationGroup,
-  Link,
   Text,
   MenuTrigger,
-  Navigation,
   Icon,
-  Button,
   ActionsMenu,
-  NestedAccordion,
   Divider,
   Drawer,
-  NestedMenu,
   Accordion,
 } from '@takamol/qiwa-design-system/components';
-import { Globe, ThreeDots, User } from '@takamol/qiwa-design-system/icons';
+import { Globe, ThreeDots } from '@takamol/qiwa-design-system/icons';
 import { useWindowUtils } from '@takamol/qiwa-design-system/utils';
-import { i18nContextManager } from '@takamol/react-qiwa-core';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocale } from 'src/app/translations/hooks/useLocale';
 
@@ -33,10 +27,12 @@ interface AdminLayoutProps {
 
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   const { t, locale, setLocale } = useLocale();
+  const actionsMenuRef = useRef();
   const [isMobileNavMenuOpen, setIsMobileNavMenuOpen] = useState<boolean>();
   const { isMobileWidth, isTabletWidth, isSmallDesktopWidth } = useWindowUtils();
   const height = isTabletWidth ? 180 : isSmallDesktopWidth ? 140 : 80;
   const navigate = useNavigate();
+  const [isTrayOpened, setIsTrayOpened] = useState<boolean>();
 
   const onClickMobileMenu = () => {
     setIsMobileNavMenuOpen(!isMobileNavMenuOpen);

@@ -1,6 +1,8 @@
 import React from 'react';
 import DynamicTable from '../../../components/table';
 import { Button } from '@takamol/qiwa-design-system/components';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
+import { useNavigate } from 'react-router-dom';
 
 // Define interface for MHRSD Contact Information data
 interface MHRSDContactInfo {
@@ -16,6 +18,7 @@ const mhrsdContactInfo: MHRSDContactInfo[] = [
 ];
 
 const MHRSDContactInformationComponent: React.FC = () => {
+  const navigate = useNavigate();
   const columns: string[] = ['ID', 'Phone', 'Fax', 'Email'];
 
   const renderActions = (isMobileWidth: boolean, variant: string, rowData: MHRSDContactInfo) => {
@@ -28,7 +31,7 @@ const MHRSDContactInformationComponent: React.FC = () => {
 
   const handleView = (rowData: MHRSDContactInfo) => {
     // Logic to handle view action
-    console.log('View clicked for ID:', rowData.ID);
+    navigate(`${AuthRoute.contactInformation}/contactInformationId`)
   };
 
   const handleEdit = (rowData: MHRSDContactInfo) => {

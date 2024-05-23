@@ -3,6 +3,7 @@ import DynamicTable from '../../../../components/table';
 import { Box, Button } from '@takamol/qiwa-design-system/components';
 import { lawOfficesInfos } from 'src/data/LawOffices.data';
 import FilterButtonComponent from 'src/components/filterBar';
+import { useNavigate } from 'react-router-dom';
 
 const LawOfficesInfosComponent: any = () => {
   const columns: string[] = [
@@ -40,9 +41,10 @@ const LawOfficesInfosComponent: any = () => {
     { label: 'Blocked', badgeVariant: 'business', badgeCount: 3, buttonVariant: 'business_ghost' },
     { label: 'Unblocked', badgeVariant: 'business', badgeCount: 217, buttonVariant: 'business_ghost' },
   ];
+  const navigate = useNavigate();
   const renderActions = () => {
     return (
-      <Button variant="business_ghost" size="small">
+      <Button variant="business_ghost" size="small" onClick={()=>navigate('/law-office-infos/some-info-id')}>
         View
       </Button>
     );

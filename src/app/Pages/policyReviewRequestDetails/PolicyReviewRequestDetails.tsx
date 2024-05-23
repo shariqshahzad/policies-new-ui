@@ -24,7 +24,7 @@ const historyData = [
   },
 ];
 
-const PolicyReviewRequest = () => {
+const PolicyReviewRequestDetails = () => {
   const companyInfoArray = [
     { label: 'COMPANY', value: 'شركة أبناء نهار جازي الرحيلي للتجارة' },
     { label: 'COMPANY NUMBER', value: '16-38440' },
@@ -59,4 +59,4 @@ const PolicyReviewRequest = () => {
   );
 };
 
-export default PolicyReviewRequest;
+export default PolicyReviewRequestDetails;

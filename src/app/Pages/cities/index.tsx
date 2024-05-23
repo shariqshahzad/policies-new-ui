@@ -3,6 +3,8 @@ import DynamicTable from '../../../components/table';
 import { Button, ButtonGroup } from '@takamol/qiwa-design-system/components';
 import { City } from 'src/interfaces/city.type';
 import { cities } from 'src/data/cities.data';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
+import { useNavigate } from 'react-router-dom';
 
 // Define interface for Cities data
 
@@ -12,9 +14,10 @@ const Cities: React.FC = () => {
   const columns: string[] = ['ID', 'Arabic Name', 'English Name', 'Created At'];
 
   const renderActions = (rowData: City) => {
+    const navigate = useNavigate();
     return (
       <ButtonGroup size="small">
-        <Button variant="business_ghost" size="small" onClick={() => handleView(rowData)}>
+        <Button variant="business_ghost" size="small" onClick={() => navigate(`${AuthRoute.cities}/1`)}>
           View
         </Button>
         <Button variant="business_ghost" size="small" onClick={() => handleEdit(rowData)}>

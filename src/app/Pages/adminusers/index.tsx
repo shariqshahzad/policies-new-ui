@@ -5,6 +5,8 @@ import { Box, Button } from '@takamol/qiwa-design-system/components';
 import { adminUsersData } from 'src/data/admin.data';
 import FilterHeader from 'src/components/filterBar';
 import { buttonsData } from 'src/interfaces/adminuser.type';
+import { useNavigate } from 'react-router-dom';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
 
 // Define interface for admin user data
 
@@ -18,9 +20,10 @@ const AdminUsers: React.FC = () => {
   ];
 
   const renderActions = () => {
+    const navigate = useNavigate();
     return (
       <div>
-        <Button variant="business_ghost" size="small">
+        <Button variant="business_ghost" size="small" onClick={()=>navigate(`${AuthRoute.adminuser}/1`)}>
           View
         </Button>
       </div>

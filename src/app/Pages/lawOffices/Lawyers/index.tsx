@@ -3,6 +3,8 @@ import DynamicTable from '../../../../components/table';
 import { Button, ButtonGroup } from '@takamol/qiwa-design-system/components';
 import { Lawyer } from 'src/interfaces/lawOfficeInfo.type';
 import { lawyers } from 'src/data/LawOffices.data';
+import { useNavigate } from 'react-router-dom';
+import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
 
 // Define interface for Lawyers data
 
@@ -12,9 +14,10 @@ const Lawyers: React.FC = () => {
   const columns: string[] = ['ID', 'National ID number', 'Law Offices name', 'Name', 'Created at'];
 
   const renderActions = (rowData: Lawyer) => {
+    const navigate = useNavigate();
     return (
       <ButtonGroup>
-        <Button variant="business_ghost" size="small" onClick={() => handleView(rowData)}>
+        <Button variant="business_ghost" size="small" onClick={() => navigate(`${AuthRoute.Lawyers}/1`)}>
           View
         </Button>
         <Button variant="business_ghost" size="small" onClick={() => handleEdit(rowData)}>
