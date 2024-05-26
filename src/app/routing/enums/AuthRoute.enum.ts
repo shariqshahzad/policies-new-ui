@@ -17,7 +17,7 @@ export enum AuthRoute {
   checkEligibilityResponse = '/check-eligibility-responses',
   cities = '/cities',
   invoices = '/invoices',
-  unifiedinvoicelogs = '/unified_invoice_logs',
+  unifiedinvoicelogs = '/unified-invoicelogs',
   paymentLogs = '/payment-logs',
   paymentStatusLogs = '/payment-status-logs',
   adminuser = '/admin-users',

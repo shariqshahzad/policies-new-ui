@@ -5,6 +5,7 @@ import { City } from 'src/interfaces/city.type';
 import { cities } from 'src/data/cities.data';
 import { AuthRoute } from 'src/app/routing/enums/AuthRoute.enum';
 import { useNavigate } from 'react-router-dom';
+import { useCities } from 'src/app/exampleDashboard/hooks/useCities';
 
 // Define interface for Cities data
 
@@ -12,7 +13,16 @@ import { useNavigate } from 'react-router-dom';
 
 const Cities: React.FC = () => {
   const columns: string[] = ['ID', 'Arabic Name', 'English Name', 'Created At'];
-
+  const { data, isLoading, refetch } = useCities(
+    {
+      per_page:10,
+      page:0
+    },
+    true,
+  );
+  console.log(data);
+  const { data: policyRequests, meta: metaPagination } = (data || {}) as any;
+  // const tableContentRows = useRequestHistoryTableRows(policyRequests, refetch);
   const renderActions = (rowData: City) => {
     const navigate = useNavigate();
     return (
